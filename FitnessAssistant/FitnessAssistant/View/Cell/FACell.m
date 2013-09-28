@@ -10,8 +10,6 @@
 
 @interface FACell ()
 
-@property (nonatomic, strong) id delegate;
-
 @end
 
 @implementation FACell

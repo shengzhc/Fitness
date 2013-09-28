@@ -8,6 +8,16 @@
 
 #import "FAPanCell.h"
 
+@protocol FANoteBookCellDelegate <NSObject>
+
+- (void)editButtonClickedAtCell:(FACell *)cell;
+- (void)deleteButtonClickedAtCell:(FACell *)cell;
+- (void)activateQuickStartAtCell:(FACell *)cell;
+
+@end
+
 @interface FANoteBookCell : FAPanCell
+
+@property (nonatomic, strong) id < FANoteBookCellDelegate > delgate;
 
 @end

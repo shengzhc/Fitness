@@ -40,6 +40,19 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
+    return NO;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (![gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        return NO;
+    }
+    
+    CGPoint transitionInView = [(UIPanGestureRecognizer *)gestureRecognizer translationInView:self.contentView];
+    if (fabs(transitionInView.x) < fabs(transitionInView.y)) {
+        return NO;
+    }
     return YES;
 }
 

@@ -50,6 +50,7 @@
     FACell *cell = [FACellFactory cellForTableView:tableView cellType:CellTypeNoteBook];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = [NSString stringWithFormat:@"%i", indexPath.row];
+    [cell setData:nil delegate:self];
     return cell;
 }
 
@@ -58,5 +59,19 @@
     return 60.0;
 }
 
+- (void)editButtonClickedAtCell:(FACell *)cell
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+- (void)deleteButtonClickedAtCell:(FACell *)cell
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+- (void)activateQuickStartAtCell:(FACell *)cell
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
 @end

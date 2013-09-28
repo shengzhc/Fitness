@@ -8,6 +8,6 @@
 
 #import "FAView.h"
 
-@interface FANoteBookView : FAView < UITableViewDataSource, UITableViewDelegate >
+@interface FANoteBookView : FAView < UITableViewDataSource, UITableViewDelegate, FANoteBookCellDelegate >
 
 @end
