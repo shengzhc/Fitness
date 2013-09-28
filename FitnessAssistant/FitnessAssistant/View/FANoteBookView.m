@@ -10,6 +10,8 @@
 
 @interface FANoteBookView ()
 
+@property (nonatomic, strong) UIButton *addNoteBtn;
+
 @end
 
 @implementation FANoteBookView
@@ -22,6 +24,8 @@
     if (self) {
         
 
+        
+        
     }
     return self;
 }

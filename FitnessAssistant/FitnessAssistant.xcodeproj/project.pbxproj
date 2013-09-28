@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E775587217F73AB900616663 /* UIFont+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587117F73AB900616663 /* UIFont+FAServices.m */; };
 		E7BE12D217F699A400B84795 /* UILabel+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C217F699A300B84795 /* UILabel+FAServices.m */; };
 		E7BE12D417F699A400B84795 /* FAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C817F699A300B84795 /* FAGeometry.m */; };
 		E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12CC17F699A400B84795 /* UIView+FAServices.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E775587017F73AB900616663 /* UIFont+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FAServices.h"; sourceTree = "<group>"; };
+		E775587117F73AB900616663 /* UIFont+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FAServices.m"; sourceTree = "<group>"; };
 		E7BE12C117F699A300B84795 /* UILabel+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FAServices.h"; sourceTree = "<group>"; };
 		E7BE12C217F699A300B84795 /* UILabel+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FAServices.m"; sourceTree = "<group>"; };
 		E7BE12C717F699A300B84795 /* FAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAGeometry.h; sourceTree = "<group>"; };
@@ -122,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E775586F17F73A8900616663 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				E775587017F73AB900616663 /* UIFont+FAServices.h */,
+				E775587117F73AB900616663 /* UIFont+FAServices.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
 		E7BE12B217F55FA000B84795 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +214,7 @@
 		E7BE12BC17F699A300B84795 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E775586F17F73A8900616663 /* UIFont */,
 				E7BE12C017F699A300B84795 /* UILabel */,
 				E7BE12C617F699A300B84795 /* UIView */,
 			);
@@ -417,6 +430,7 @@
 				E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */,
 				E7BE12DE17F699BA00B84795 /* FAViewController.m in Sources */,
 				E7BE12E417F69E0500B84795 /* FANoteViewController.m in Sources */,
+				E775587217F73AB900616663 /* UIFont+FAServices.m in Sources */,
 				E7BE12ED17F69E2E00B84795 /* FAStatisticViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

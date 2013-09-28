@@ -10,6 +10,7 @@
 #import "UIView+FAServices.h"
 #import "UIView+QuartzCore.h"
 #import "UILabel+FAServices.h"
+#import "UIFont+FAServices.h"
 
 @interface FAView : UIView
 

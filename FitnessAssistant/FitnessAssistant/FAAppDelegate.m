@@ -18,6 +18,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     FANoteBookViewController *noteBookViewController = [[FANoteBookViewController alloc] initWithDelegate:nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldFontWithSize:18], NSForegroundColorAttributeName: [UIColor grayColor]}];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithSize:16], NSForegroundColorAttributeName: [UIColor blueColor]} forState:UIControlStateNormal];
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:noteBookViewController];
     self.window.rootViewController = navigationController;
 
