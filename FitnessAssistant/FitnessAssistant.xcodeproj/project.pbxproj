@@ -8,6 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		E775587217F73AB900616663 /* UIFont+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587117F73AB900616663 /* UIFont+FAServices.m */; };
+		E775587917F74EAB00616663 /* FACell.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587817F74EAB00616663 /* FACell.m */; };
+		E775587C17F74ECE00616663 /* FAPanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587B17F74ECE00616663 /* FAPanCell.m */; };
+		E775587F17F74F7500616663 /* FANoteBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587E17F74F7500616663 /* FANoteBookCell.m */; };
+		E775588217F75CC400616663 /* FACellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E775588117F75CC400616663 /* FACellFactory.m */; };
+		E77558A117F7669D00616663 /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588417F7669D00616663 /* blackButton.png */; };
+		E77558A217F7669D00616663 /* blackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588517F7669D00616663 /* blackButton@2x.png */; };
+		E77558A317F7669D00616663 /* blackButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588617F7669D00616663 /* blackButtonHighlight.png */; };
+		E77558A417F7669D00616663 /* blackButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588717F7669D00616663 /* blackButtonHighlight@2x.png */; };
+		E77558A517F7669D00616663 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588817F7669D00616663 /* blueButton.png */; };
+		E77558A617F7669D00616663 /* blueButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588917F7669D00616663 /* blueButton@2x.png */; };
+		E77558A717F7669D00616663 /* blueButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588A17F7669D00616663 /* blueButtonHighlight.png */; };
+		E77558A817F7669D00616663 /* blueButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588B17F7669D00616663 /* blueButtonHighlight@2x.png */; };
+		E77558A917F7669D00616663 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588C17F7669D00616663 /* greenButton.png */; };
+		E77558AA17F7669D00616663 /* greenButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588D17F7669D00616663 /* greenButton@2x.png */; };
+		E77558AB17F7669D00616663 /* greenButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588E17F7669D00616663 /* greenButtonHighlight.png */; };
+		E77558AC17F7669D00616663 /* greenButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775588F17F7669D00616663 /* greenButtonHighlight@2x.png */; };
+		E77558AD17F7669D00616663 /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589017F7669D00616663 /* greyButton.png */; };
+		E77558AE17F7669D00616663 /* greyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589117F7669D00616663 /* greyButton@2x.png */; };
+		E77558AF17F7669D00616663 /* greyButton@2xpng in Resources */ = {isa = PBXBuildFile; fileRef = E775589217F7669D00616663 /* greyButton@2xpng */; };
+		E77558B017F7669D00616663 /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589317F7669D00616663 /* greyButtonHighlight.png */; };
+		E77558B117F7669D00616663 /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589417F7669D00616663 /* greyButtonHighlight@2x.png */; };
+		E77558B217F7669D00616663 /* orangeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589517F7669D00616663 /* orangeButton.png */; };
+		E77558B317F7669D00616663 /* orangeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589617F7669D00616663 /* orangeButton@2x.png */; };
+		E77558B417F7669D00616663 /* orangeButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589717F7669D00616663 /* orangeButtonHighlight.png */; };
+		E77558B517F7669D00616663 /* orangeButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589817F7669D00616663 /* orangeButtonHighlight@2x.png */; };
+		E77558B617F7669D00616663 /* tanButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589917F7669D00616663 /* tanButton.png */; };
+		E77558B717F7669D00616663 /* tanButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589A17F7669D00616663 /* tanButton@2x.png */; };
+		E77558B817F7669D00616663 /* tanButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589B17F7669D00616663 /* tanButtonHighlight.png */; };
+		E77558B917F7669D00616663 /* tanButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589C17F7669D00616663 /* tanButtonHighlight@2x.png */; };
+		E77558BA17F7669D00616663 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589D17F7669D00616663 /* whiteButton.png */; };
+		E77558BB17F7669D00616663 /* whiteButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589E17F7669D00616663 /* whiteButton@2x.png */; };
+		E77558BC17F7669D00616663 /* whiteButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589F17F7669D00616663 /* whiteButtonHighlight.png */; };
+		E77558BD17F7669D00616663 /* whiteButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E77558A017F7669D00616663 /* whiteButtonHighlight@2x.png */; };
 		E7BE12D217F699A400B84795 /* UILabel+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C217F699A300B84795 /* UILabel+FAServices.m */; };
 		E7BE12D417F699A400B84795 /* FAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C817F699A300B84795 /* FAGeometry.m */; };
 		E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12CC17F699A400B84795 /* UIView+FAServices.m */; };
@@ -51,6 +84,43 @@
 /* Begin PBXFileReference section */
 		E775587017F73AB900616663 /* UIFont+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FAServices.h"; sourceTree = "<group>"; };
 		E775587117F73AB900616663 /* UIFont+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FAServices.m"; sourceTree = "<group>"; };
+		E775587717F74EAB00616663 /* FACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FACell.h; sourceTree = "<group>"; };
+		E775587817F74EAB00616663 /* FACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FACell.m; sourceTree = "<group>"; };
+		E775587A17F74ECE00616663 /* FAPanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAPanCell.h; sourceTree = "<group>"; };
+		E775587B17F74ECE00616663 /* FAPanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAPanCell.m; sourceTree = "<group>"; };
+		E775587D17F74F7500616663 /* FANoteBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteBookCell.h; sourceTree = "<group>"; };
+		E775587E17F74F7500616663 /* FANoteBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteBookCell.m; sourceTree = "<group>"; };
+		E775588017F75CC400616663 /* FACellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FACellFactory.h; sourceTree = "<group>"; };
+		E775588117F75CC400616663 /* FACellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FACellFactory.m; sourceTree = "<group>"; };
+		E775588417F7669D00616663 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
+		E775588517F7669D00616663 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButton@2x.png"; sourceTree = "<group>"; };
+		E775588617F7669D00616663 /* blackButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButtonHighlight.png; sourceTree = "<group>"; };
+		E775588717F7669D00616663 /* blackButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E775588817F7669D00616663 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
+		E775588917F7669D00616663 /* blueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButton@2x.png"; sourceTree = "<group>"; };
+		E775588A17F7669D00616663 /* blueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonHighlight.png; sourceTree = "<group>"; };
+		E775588B17F7669D00616663 /* blueButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E775588C17F7669D00616663 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		E775588D17F7669D00616663 /* greenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButton@2x.png"; sourceTree = "<group>"; };
+		E775588E17F7669D00616663 /* greenButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButtonHighlight.png; sourceTree = "<group>"; };
+		E775588F17F7669D00616663 /* greenButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E775589017F7669D00616663 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = "<group>"; };
+		E775589117F7669D00616663 /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton@2x.png"; sourceTree = "<group>"; };
+		E775589217F7669D00616663 /* greyButton@2xpng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "greyButton@2xpng"; sourceTree = "<group>"; };
+		E775589317F7669D00616663 /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
+		E775589417F7669D00616663 /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E775589517F7669D00616663 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButton.png; sourceTree = "<group>"; };
+		E775589617F7669D00616663 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButton@2x.png"; sourceTree = "<group>"; };
+		E775589717F7669D00616663 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButtonHighlight.png; sourceTree = "<group>"; };
+		E775589817F7669D00616663 /* orangeButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E775589917F7669D00616663 /* tanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanButton.png; sourceTree = "<group>"; };
+		E775589A17F7669D00616663 /* tanButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanButton@2x.png"; sourceTree = "<group>"; };
+		E775589B17F7669D00616663 /* tanButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanButtonHighlight.png; sourceTree = "<group>"; };
+		E775589C17F7669D00616663 /* tanButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E775589D17F7669D00616663 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
+		E775589E17F7669D00616663 /* whiteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButton@2x.png"; sourceTree = "<group>"; };
+		E775589F17F7669D00616663 /* whiteButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButtonHighlight.png; sourceTree = "<group>"; };
+		E77558A017F7669D00616663 /* whiteButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		E7BE12C117F699A300B84795 /* UILabel+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FAServices.h"; sourceTree = "<group>"; };
 		E7BE12C217F699A300B84795 /* UILabel+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FAServices.m"; sourceTree = "<group>"; };
 		E7BE12C717F699A300B84795 /* FAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAGeometry.h; sourceTree = "<group>"; };
@@ -134,6 +204,57 @@
 			path = UIFont;
 			sourceTree = "<group>";
 		};
+		E775587617F74EAB00616663 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E775587717F74EAB00616663 /* FACell.h */,
+				E775587817F74EAB00616663 /* FACell.m */,
+				E775587A17F74ECE00616663 /* FAPanCell.h */,
+				E775587B17F74ECE00616663 /* FAPanCell.m */,
+				E775587D17F74F7500616663 /* FANoteBookCell.h */,
+				E775587E17F74F7500616663 /* FANoteBookCell.m */,
+				E775588017F75CC400616663 /* FACellFactory.h */,
+				E775588117F75CC400616663 /* FACellFactory.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E775588317F7669D00616663 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E775588417F7669D00616663 /* blackButton.png */,
+				E775588517F7669D00616663 /* blackButton@2x.png */,
+				E775588617F7669D00616663 /* blackButtonHighlight.png */,
+				E775588717F7669D00616663 /* blackButtonHighlight@2x.png */,
+				E775588817F7669D00616663 /* blueButton.png */,
+				E775588917F7669D00616663 /* blueButton@2x.png */,
+				E775588A17F7669D00616663 /* blueButtonHighlight.png */,
+				E775588B17F7669D00616663 /* blueButtonHighlight@2x.png */,
+				E775588C17F7669D00616663 /* greenButton.png */,
+				E775588D17F7669D00616663 /* greenButton@2x.png */,
+				E775588E17F7669D00616663 /* greenButtonHighlight.png */,
+				E775588F17F7669D00616663 /* greenButtonHighlight@2x.png */,
+				E775589017F7669D00616663 /* greyButton.png */,
+				E775589117F7669D00616663 /* greyButton@2x.png */,
+				E775589217F7669D00616663 /* greyButton@2xpng */,
+				E775589317F7669D00616663 /* greyButtonHighlight.png */,
+				E775589417F7669D00616663 /* greyButtonHighlight@2x.png */,
+				E775589517F7669D00616663 /* orangeButton.png */,
+				E775589617F7669D00616663 /* orangeButton@2x.png */,
+				E775589717F7669D00616663 /* orangeButtonHighlight.png */,
+				E775589817F7669D00616663 /* orangeButtonHighlight@2x.png */,
+				E775589917F7669D00616663 /* tanButton.png */,
+				E775589A17F7669D00616663 /* tanButton@2x.png */,
+				E775589B17F7669D00616663 /* tanButtonHighlight.png */,
+				E775589C17F7669D00616663 /* tanButtonHighlight@2x.png */,
+				E775589D17F7669D00616663 /* whiteButton.png */,
+				E775589E17F7669D00616663 /* whiteButton@2x.png */,
+				E775589F17F7669D00616663 /* whiteButtonHighlight.png */,
+				E77558A017F7669D00616663 /* whiteButtonHighlight@2x.png */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
 		E7BE12B217F55FA000B84795 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +293,7 @@
 		E7BE12B517F55FA000B84795 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E775588317F7669D00616663 /* buttons */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -187,6 +309,7 @@
 		E7BE12B717F55FA000B84795 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E775587617F74EAB00616663 /* Cell */,
 				E7BE12B817F55FA000B84795 /* Base */,
 				E7BE12EE17F69E5200B84795 /* FANoteBookView.h */,
 				E7BE12EF17F69E5200B84795 /* FANoteBookView.m */,
@@ -393,8 +516,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E77558A217F7669D00616663 /* blackButton@2x.png in Resources */,
+				E77558AE17F7669D00616663 /* greyButton@2x.png in Resources */,
+				E77558AC17F7669D00616663 /* greenButtonHighlight@2x.png in Resources */,
 				E7DE50E217EFD895006A67D6 /* InfoPlist.strings in Resources */,
+				E77558A917F7669D00616663 /* greenButton.png in Resources */,
+				E77558B917F7669D00616663 /* tanButtonHighlight@2x.png in Resources */,
+				E77558A617F7669D00616663 /* blueButton@2x.png in Resources */,
+				E77558B817F7669D00616663 /* tanButtonHighlight.png in Resources */,
+				E77558B317F7669D00616663 /* orangeButton@2x.png in Resources */,
+				E77558AA17F7669D00616663 /* greenButton@2x.png in Resources */,
+				E77558AB17F7669D00616663 /* greenButtonHighlight.png in Resources */,
+				E77558A817F7669D00616663 /* blueButtonHighlight@2x.png in Resources */,
+				E77558A717F7669D00616663 /* blueButtonHighlight.png in Resources */,
+				E77558A117F7669D00616663 /* blackButton.png in Resources */,
+				E77558B017F7669D00616663 /* greyButtonHighlight.png in Resources */,
+				E77558BB17F7669D00616663 /* whiteButton@2x.png in Resources */,
+				E77558B717F7669D00616663 /* tanButton@2x.png in Resources */,
+				E77558AF17F7669D00616663 /* greyButton@2xpng in Resources */,
+				E77558BC17F7669D00616663 /* whiteButtonHighlight.png in Resources */,
 				E7DE50EA17EFD895006A67D6 /* Images.xcassets in Resources */,
+				E77558B617F7669D00616663 /* tanButton.png in Resources */,
+				E77558BA17F7669D00616663 /* whiteButton.png in Resources */,
+				E77558A517F7669D00616663 /* blueButton.png in Resources */,
+				E77558B417F7669D00616663 /* orangeButtonHighlight.png in Resources */,
+				E77558A317F7669D00616663 /* blackButtonHighlight.png in Resources */,
+				E77558AD17F7669D00616663 /* greyButton.png in Resources */,
+				E77558BD17F7669D00616663 /* whiteButtonHighlight@2x.png in Resources */,
+				E77558A417F7669D00616663 /* blackButtonHighlight@2x.png in Resources */,
+				E77558B517F7669D00616663 /* orangeButtonHighlight@2x.png in Resources */,
+				E77558B117F7669D00616663 /* greyButtonHighlight@2x.png in Resources */,
+				E77558B217F7669D00616663 /* orangeButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,19 +570,23 @@
 				E7BE12F617F69E6C00B84795 /* FANoteDetailEditView.m in Sources */,
 				E7BE12F017F69E5200B84795 /* FANoteBookView.m in Sources */,
 				E7BE12DB17F699B100B84795 /* FAView.m in Sources */,
+				E775587F17F74F7500616663 /* FANoteBookCell.m in Sources */,
 				E7BE12E717F69E1400B84795 /* FANoteDetailEditViewController.m in Sources */,
 				E7DE50E417EFD895006A67D6 /* main.m in Sources */,
 				E7BE12F917F69E7600B84795 /* FANoteClockView.m in Sources */,
 				E7BE12F317F69E5C00B84795 /* FANoteView.m in Sources */,
+				E775588217F75CC400616663 /* FACellFactory.m in Sources */,
 				E7BE12E117F69DF900B84795 /* FANoteBookViewController.m in Sources */,
 				E7BE12EA17F69E2500B84795 /* FANoteClockViewController.m in Sources */,
 				E7DE50E817EFD895006A67D6 /* FAAppDelegate.m in Sources */,
 				E7BE12FC17F69E8200B84795 /* FAStatisticView.m in Sources */,
 				E7BE12D717F699A400B84795 /* UIView+QuartzCore.m in Sources */,
+				E775587C17F74ECE00616663 /* FAPanCell.m in Sources */,
 				E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */,
 				E7BE12DE17F699BA00B84795 /* FAViewController.m in Sources */,
 				E7BE12E417F69E0500B84795 /* FANoteViewController.m in Sources */,
 				E775587217F73AB900616663 /* UIFont+FAServices.m in Sources */,
+				E775587917F74EAB00616663 /* FACell.m in Sources */,
 				E7BE12ED17F69E2E00B84795 /* FAStatisticViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

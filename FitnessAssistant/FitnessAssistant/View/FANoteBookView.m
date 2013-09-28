@@ -11,6 +11,7 @@
 @interface FANoteBookView ()
 
 @property (nonatomic, strong) UIButton *addNoteBtn;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -23,8 +24,11 @@
                        delegate:delegate];
     if (self) {
         
-
+        _tableView = [[UITableView alloc] init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
         
+        [self addSubview:_tableView];
         
     }
     return self;
@@ -33,6 +37,25 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    self.tableView.frame = self.bounds;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FACell *cell = [FACellFactory cellForTableView:tableView cellType:CellTypeNoteBook];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = [NSString stringWithFormat:@"%i", indexPath.row];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0;
 }
 
 
