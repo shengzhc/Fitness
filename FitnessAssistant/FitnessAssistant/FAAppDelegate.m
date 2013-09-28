@@ -7,6 +7,7 @@
 //
 
 #import "FAAppDelegate.h"
+#import "FANoteBookViewController.h"
 
 @implementation FAAppDelegate
 
@@ -15,6 +16,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    FANoteBookViewController *noteBookViewController = [[FANoteBookViewController alloc] initWithDelegate:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:noteBookViewController];
+    self.window.rootViewController = navigationController;
+
     [self.window makeKeyAndVisible];
     return YES;
 }

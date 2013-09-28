@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7BE12D217F699A400B84795 /* UILabel+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C217F699A300B84795 /* UILabel+FAServices.m */; };
+		E7BE12D417F699A400B84795 /* FAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C817F699A300B84795 /* FAGeometry.m */; };
+		E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12CC17F699A400B84795 /* UIView+FAServices.m */; };
+		E7BE12D717F699A400B84795 /* UIView+QuartzCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12CE17F699A400B84795 /* UIView+QuartzCore.m */; };
+		E7BE12DB17F699B100B84795 /* FAView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12DA17F699B100B84795 /* FAView.m */; };
+		E7BE12DE17F699BA00B84795 /* FAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12DD17F699BA00B84795 /* FAViewController.m */; };
+		E7BE12E117F69DF900B84795 /* FANoteBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12E017F69DF900B84795 /* FANoteBookViewController.m */; };
+		E7BE12E417F69E0500B84795 /* FANoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12E317F69E0500B84795 /* FANoteViewController.m */; };
+		E7BE12E717F69E1400B84795 /* FANoteDetailEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12E617F69E1400B84795 /* FANoteDetailEditViewController.m */; };
+		E7BE12EA17F69E2500B84795 /* FANoteClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12E917F69E2500B84795 /* FANoteClockViewController.m */; };
+		E7BE12ED17F69E2E00B84795 /* FAStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12EC17F69E2E00B84795 /* FAStatisticViewController.m */; };
+		E7BE12F017F69E5200B84795 /* FANoteBookView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12EF17F69E5200B84795 /* FANoteBookView.m */; };
+		E7BE12F317F69E5C00B84795 /* FANoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12F217F69E5C00B84795 /* FANoteView.m */; };
+		E7BE12F617F69E6C00B84795 /* FANoteDetailEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12F517F69E6C00B84795 /* FANoteDetailEditView.m */; };
+		E7BE12F917F69E7600B84795 /* FANoteClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12F817F69E7600B84795 /* FANoteClockView.m */; };
+		E7BE12FC17F69E8200B84795 /* FAStatisticView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12FB17F69E8200B84795 /* FAStatisticView.m */; };
 		E7DE50D817EFD895006A67D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DE50D717EFD895006A67D6 /* Foundation.framework */; };
 		E7DE50DA17EFD895006A67D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DE50D917EFD895006A67D6 /* CoreGraphics.framework */; };
 		E7DE50DC17EFD895006A67D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DE50DB17EFD895006A67D6 /* UIKit.framework */; };
@@ -32,6 +48,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E7BE12C117F699A300B84795 /* UILabel+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FAServices.h"; sourceTree = "<group>"; };
+		E7BE12C217F699A300B84795 /* UILabel+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FAServices.m"; sourceTree = "<group>"; };
+		E7BE12C717F699A300B84795 /* FAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAGeometry.h; sourceTree = "<group>"; };
+		E7BE12C817F699A300B84795 /* FAGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAGeometry.m; sourceTree = "<group>"; };
+		E7BE12CB17F699A400B84795 /* UIView+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FAServices.h"; sourceTree = "<group>"; };
+		E7BE12CC17F699A400B84795 /* UIView+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FAServices.m"; sourceTree = "<group>"; };
+		E7BE12CD17F699A400B84795 /* UIView+QuartzCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QuartzCore.h"; sourceTree = "<group>"; };
+		E7BE12CE17F699A400B84795 /* UIView+QuartzCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QuartzCore.m"; sourceTree = "<group>"; };
+		E7BE12D917F699B100B84795 /* FAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAView.h; sourceTree = "<group>"; };
+		E7BE12DA17F699B100B84795 /* FAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAView.m; sourceTree = "<group>"; };
+		E7BE12DC17F699BA00B84795 /* FAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAViewController.h; sourceTree = "<group>"; };
+		E7BE12DD17F699BA00B84795 /* FAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAViewController.m; sourceTree = "<group>"; };
+		E7BE12DF17F69DF900B84795 /* FANoteBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteBookViewController.h; sourceTree = "<group>"; };
+		E7BE12E017F69DF900B84795 /* FANoteBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteBookViewController.m; sourceTree = "<group>"; };
+		E7BE12E217F69E0500B84795 /* FANoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteViewController.h; sourceTree = "<group>"; };
+		E7BE12E317F69E0500B84795 /* FANoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteViewController.m; sourceTree = "<group>"; };
+		E7BE12E517F69E1400B84795 /* FANoteDetailEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteDetailEditViewController.h; sourceTree = "<group>"; };
+		E7BE12E617F69E1400B84795 /* FANoteDetailEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteDetailEditViewController.m; sourceTree = "<group>"; };
+		E7BE12E817F69E2500B84795 /* FANoteClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteClockViewController.h; sourceTree = "<group>"; };
+		E7BE12E917F69E2500B84795 /* FANoteClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteClockViewController.m; sourceTree = "<group>"; };
+		E7BE12EB17F69E2E00B84795 /* FAStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAStatisticViewController.h; sourceTree = "<group>"; };
+		E7BE12EC17F69E2E00B84795 /* FAStatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAStatisticViewController.m; sourceTree = "<group>"; };
+		E7BE12EE17F69E5200B84795 /* FANoteBookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteBookView.h; sourceTree = "<group>"; };
+		E7BE12EF17F69E5200B84795 /* FANoteBookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteBookView.m; sourceTree = "<group>"; };
+		E7BE12F117F69E5C00B84795 /* FANoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteView.h; sourceTree = "<group>"; };
+		E7BE12F217F69E5C00B84795 /* FANoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteView.m; sourceTree = "<group>"; };
+		E7BE12F417F69E6C00B84795 /* FANoteDetailEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteDetailEditView.h; sourceTree = "<group>"; };
+		E7BE12F517F69E6C00B84795 /* FANoteDetailEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteDetailEditView.m; sourceTree = "<group>"; };
+		E7BE12F717F69E7600B84795 /* FANoteClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteClockView.h; sourceTree = "<group>"; };
+		E7BE12F817F69E7600B84795 /* FANoteClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteClockView.m; sourceTree = "<group>"; };
+		E7BE12FA17F69E8200B84795 /* FAStatisticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAStatisticView.h; sourceTree = "<group>"; };
+		E7BE12FB17F69E8200B84795 /* FAStatisticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAStatisticView.m; sourceTree = "<group>"; };
 		E7DE50D417EFD895006A67D6 /* FitnessAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE50D717EFD895006A67D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DE50D917EFD895006A67D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +122,114 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7BE12B217F55FA000B84795 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12B317F55FA000B84795 /* Base */,
+				E7BE12DF17F69DF900B84795 /* FANoteBookViewController.h */,
+				E7BE12E017F69DF900B84795 /* FANoteBookViewController.m */,
+				E7BE12E217F69E0500B84795 /* FANoteViewController.h */,
+				E7BE12E317F69E0500B84795 /* FANoteViewController.m */,
+				E7BE12E517F69E1400B84795 /* FANoteDetailEditViewController.h */,
+				E7BE12E617F69E1400B84795 /* FANoteDetailEditViewController.m */,
+				E7BE12E817F69E2500B84795 /* FANoteClockViewController.h */,
+				E7BE12E917F69E2500B84795 /* FANoteClockViewController.m */,
+				E7BE12EB17F69E2E00B84795 /* FAStatisticViewController.h */,
+				E7BE12EC17F69E2E00B84795 /* FAStatisticViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7BE12B317F55FA000B84795 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12DC17F699BA00B84795 /* FAViewController.h */,
+				E7BE12DD17F699BA00B84795 /* FAViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E7BE12B417F55FA000B84795 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12B517F55FA000B84795 /* image */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E7BE12B517F55FA000B84795 /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		E7BE12B617F55FA000B84795 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12BC17F699A300B84795 /* Categories */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		E7BE12B717F55FA000B84795 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12B817F55FA000B84795 /* Base */,
+				E7BE12EE17F69E5200B84795 /* FANoteBookView.h */,
+				E7BE12EF17F69E5200B84795 /* FANoteBookView.m */,
+				E7BE12F117F69E5C00B84795 /* FANoteView.h */,
+				E7BE12F217F69E5C00B84795 /* FANoteView.m */,
+				E7BE12F417F69E6C00B84795 /* FANoteDetailEditView.h */,
+				E7BE12F517F69E6C00B84795 /* FANoteDetailEditView.m */,
+				E7BE12F717F69E7600B84795 /* FANoteClockView.h */,
+				E7BE12F817F69E7600B84795 /* FANoteClockView.m */,
+				E7BE12FA17F69E8200B84795 /* FAStatisticView.h */,
+				E7BE12FB17F69E8200B84795 /* FAStatisticView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7BE12B817F55FA000B84795 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12D917F699B100B84795 /* FAView.h */,
+				E7BE12DA17F699B100B84795 /* FAView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E7BE12BC17F699A300B84795 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12C017F699A300B84795 /* UILabel */,
+				E7BE12C617F699A300B84795 /* UIView */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E7BE12C017F699A300B84795 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12C117F699A300B84795 /* UILabel+FAServices.h */,
+				E7BE12C217F699A300B84795 /* UILabel+FAServices.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		E7BE12C617F699A300B84795 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE12C717F699A300B84795 /* FAGeometry.h */,
+				E7BE12C817F699A300B84795 /* FAGeometry.m */,
+				E7BE12CB17F699A400B84795 /* UIView+FAServices.h */,
+				E7BE12CC17F699A400B84795 /* UIView+FAServices.m */,
+				E7BE12CD17F699A400B84795 /* UIView+QuartzCore.h */,
+				E7BE12CE17F699A400B84795 /* UIView+QuartzCore.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		E7DE50CB17EFD895006A67D6 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +265,10 @@
 			children = (
 				E7DE50E617EFD895006A67D6 /* FAAppDelegate.h */,
 				E7DE50E717EFD895006A67D6 /* FAAppDelegate.m */,
+				E7BE12B217F55FA000B84795 /* Controller */,
+				E7BE12B717F55FA000B84795 /* View */,
+				E7BE12B417F55FA000B84795 /* Resource */,
+				E7BE12B617F55FA000B84795 /* Tool */,
 				E7DE50E917EFD895006A67D6 /* Images.xcassets */,
 				E7DE50DE17EFD895006A67D6 /* Supporting Files */,
 			);
@@ -240,8 +400,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BE12D417F699A400B84795 /* FAGeometry.m in Sources */,
+				E7BE12D217F699A400B84795 /* UILabel+FAServices.m in Sources */,
+				E7BE12F617F69E6C00B84795 /* FANoteDetailEditView.m in Sources */,
+				E7BE12F017F69E5200B84795 /* FANoteBookView.m in Sources */,
+				E7BE12DB17F699B100B84795 /* FAView.m in Sources */,
+				E7BE12E717F69E1400B84795 /* FANoteDetailEditViewController.m in Sources */,
 				E7DE50E417EFD895006A67D6 /* main.m in Sources */,
+				E7BE12F917F69E7600B84795 /* FANoteClockView.m in Sources */,
+				E7BE12F317F69E5C00B84795 /* FANoteView.m in Sources */,
+				E7BE12E117F69DF900B84795 /* FANoteBookViewController.m in Sources */,
+				E7BE12EA17F69E2500B84795 /* FANoteClockViewController.m in Sources */,
 				E7DE50E817EFD895006A67D6 /* FAAppDelegate.m in Sources */,
+				E7BE12FC17F69E8200B84795 /* FAStatisticView.m in Sources */,
+				E7BE12D717F699A400B84795 /* UIView+QuartzCore.m in Sources */,
+				E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */,
+				E7BE12DE17F699BA00B84795 /* FAViewController.m in Sources */,
+				E7BE12E417F69E0500B84795 /* FANoteViewController.m in Sources */,
+				E7BE12ED17F69E2E00B84795 /* FAStatisticViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +618,7 @@
 				E7DE510217EFD895006A67D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7DE510317EFD895006A67D6 /* Build configuration list for PBXNativeTarget "FitnessAssistantTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +627,7 @@
 				E7DE510517EFD895006A67D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
