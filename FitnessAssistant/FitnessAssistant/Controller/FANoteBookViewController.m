@@ -10,12 +10,14 @@
 #import "FAStatisticViewController.h"
 #import "FANoteViewController.h"
 #import "FANoteClockViewController.h"
+#import "FAPopupCoverView.h"
 
 @interface FANoteBookViewController ()
 
 @property (nonatomic, strong) UIButton *menuBtn;
 @property (nonatomic, strong) UIButton *statisticBtn;
 @property (nonatomic, strong) FAStatisticViewController *statisticViewController;
+@property FAPopupCoverView *popupCoverView;
 
 @end
 
@@ -78,7 +80,15 @@
 
 - (void)statisticBtnClicked:(UIButton *)sender
 {
-    [self.navigationController pushViewController:self.statisticViewController animated:YES];
+//    [self.navigationController pushViewController:self.statisticViewController animated:YES];
+//  Now work as New button.
+    if (self.popupCoverView == nil) {
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:self.view.frame];
+    } else {
+        [self.popupCoverView reset];
+    }
+    
+    [self.view addSubview:self.popupCoverView];
 }
 
 - (void)presentNoteViewControllerWithNoteEntity:(id)entity
