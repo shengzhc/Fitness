@@ -14,6 +14,10 @@
 - (void)deleteButtonClickedAtCell:(FACell *)cell;
 - (void)activateQuickStartAtCell:(FACell *)cell;
 
+@optional
+
+- (void)didBeginInteractWithCell:(FACell *)cell;
+
 @end
 
 @interface FANoteBookCell : FAPanCell

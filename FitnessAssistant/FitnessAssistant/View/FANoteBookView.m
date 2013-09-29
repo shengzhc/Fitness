@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIButton *addNoteBtn;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) FANoteBookCell *interactiveCell;
 
 @end
 
@@ -30,7 +31,8 @@
         _tableView.dataSource = self;
         
         [self addSubview:_tableView];
-        
+       
+        self.multipleTouchEnabled = NO;
     }
     return self;
 }
@@ -50,19 +52,35 @@
 {
     FACell *cell = [FACellFactory cellForTableView:tableView cellType:CellTypeNoteBook];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = [NSString stringWithFormat:@"%i", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     [cell setData:nil delegate:self];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.0;
+    return 80.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [(FANoteBookViewController *)self.delegate presentNoteViewControllerWithNoteEntity:nil];
+}
+
+- (void)didBeginInteractWithCell:(FACell *)cell
+{
+    if (!self.interactiveCell) {
+        
+        self.interactiveCell = (FANoteBookCell *)cell;
+        return;
+    }
+    
+    if (self.interactiveCell != cell) {
+        
+        [self.interactiveCell restoreCellAnimated:YES];
+        self.interactiveCell = (FANoteBookCell *)cell;
+    }
+    
 }
 
 - (void)editButtonClickedAtCell:(FACell *)cell
@@ -77,7 +95,7 @@
 
 - (void)activateQuickStartAtCell:(FACell *)cell
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [(FANoteBookViewController *)self.delegate presentClockViewControllerWithNoteEntity:nil];
 }
 
 @end

@@ -12,5 +12,6 @@
 
 - (void)didRecognizerPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 - (void)setContentViewCenter:(CGPoint)center animated:(BOOL)animated;
+- (void)restoreCellAnimated:(BOOL)animated;
 
 @end

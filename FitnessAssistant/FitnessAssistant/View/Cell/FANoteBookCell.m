@@ -8,8 +8,7 @@
 
 #import "FANoteBookCell.h"
 
-#define BUTTON_WIDTH 60.0f
-#define TRANSITION_SPEED 200.0f
+#define BUTTON_WIDTH 80.0f
 
 @interface FANoteBookCell ()
 
@@ -26,8 +25,6 @@
     CGPoint _leftBoundaryCenter;
     CGPoint _rightBoundaryCenter;
     CGPoint _cBoundCenter;
-    
-    CGFloat _panGestureVelocity;
     BOOL _isPanning;
 }
 
@@ -98,6 +95,12 @@
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         
         _originContentCenter = self.contentView.center;
+        
+        if ([self.delegate respondsToSelector:@selector(didBeginInteractWithCell:)]) {
+            
+            [self.delegate performSelector:@selector(didBeginInteractWithCell:) withObject:self];
+        }
+        
         return;
     }
     
@@ -108,8 +111,6 @@
         [self setContentViewCenter:destContentCenter animated:NO];
     }
     else if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        
-        _panGestureVelocity = fabs([panGestureRecognizer velocityInView:self.contentView].x);
         
         if (destContentCenter.x - _leftBoundaryCenter.x <= BUTTON_WIDTH) {
             
@@ -129,6 +130,12 @@
         }
     }
 }
+
+- (void)restoreCellAnimated:(BOOL)animated {
+    
+    [self setContentViewCenter:_cBoundCenter animated:animated];
+}
+
 
 - (void)setContentViewCenter:(CGPoint)center animated:(BOOL)animated
 {
@@ -157,16 +164,8 @@
         self.quickStartLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:destAlaph];
     }
     else {
-        
-        CGFloat offset = fabsf(self.contentView.center.x - center.x);
-        CGFloat speed = TRANSITION_SPEED > _panGestureVelocity ? TRANSITION_SPEED : _panGestureVelocity;
-        CGFloat duration = offset / speed;
-        
-        if (duration > 0.15) {
-            duration = 0.15f;
-        }
-        
-        [UIView animateWithDuration:duration
+
+        [UIView animateWithDuration:0.1
                               delay:0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^ {
@@ -178,7 +177,7 @@
                          completion:^(BOOL finished) {
                              
                              if (destAlaph == 1.0) {
-
+                                 [self setContentViewCenter:_cBoundCenter animated:YES];
                                  [self.delegate activateQuickStartAtCell:self];
                              }
                          }];

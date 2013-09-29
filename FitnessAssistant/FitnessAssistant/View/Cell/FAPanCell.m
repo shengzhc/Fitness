@@ -57,6 +57,7 @@
 }
 
 - (void)setContentViewCenter:(CGPoint)center animated:(BOOL)animated { }
+- (void)restoreCellAnimated:(BOOL)animated { }
 - (void)didRecognizerPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer { }
 
 @end
