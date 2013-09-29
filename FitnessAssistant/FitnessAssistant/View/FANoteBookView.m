@@ -7,6 +7,7 @@
 //
 
 #import "FANoteBookView.h"
+#import "FANoteBookViewController.h"
 
 @interface FANoteBookView ()
 
@@ -57,6 +58,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60.0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [(FANoteBookViewController *)self.delegate presentNoteViewControllerWithNoteEntity:nil];
 }
 
 - (void)editButtonClickedAtCell:(FACell *)cell

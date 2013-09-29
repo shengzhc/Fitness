@@ -11,4 +11,7 @@
 
 @interface FANoteViewController : FAViewController
 
+- (id)initWithNoteEntity:(id)noteEntity delegate:(id)delegate;
+- (void)clockButtonClicked:(UIButton *)button;
+
 @end

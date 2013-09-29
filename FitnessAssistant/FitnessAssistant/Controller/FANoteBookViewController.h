@@ -11,4 +11,8 @@
 
 @interface FANoteBookViewController : FAViewController
 
+- (void)presentNoteViewControllerWithNoteEntity:(id)entity;
+- (void)presentClockViewControllerWithNoteEntity:(id)entity;
+- (void)dismissClockViewController;
+
 @end

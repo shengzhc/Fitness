@@ -8,6 +8,8 @@
 
 #import "FANoteBookViewController.h"
 #import "FAStatisticViewController.h"
+#import "FANoteViewController.h"
+#import "FANoteClockViewController.h"
 
 @interface FANoteBookViewController ()
 
@@ -78,4 +80,25 @@
 {
     [self.navigationController pushViewController:self.statisticViewController animated:YES];
 }
+
+- (void)presentNoteViewControllerWithNoteEntity:(id)entity
+{
+    FANoteViewController *noteViewController = [[FANoteViewController alloc] initWithNoteEntity:entity delegate:self];
+    [self.navigationController pushViewController:noteViewController animated:YES];
+}
+
+- (void)presentClockViewControllerWithNoteEntity:(id)entity
+{
+    FANoteClockViewController *noteClockViewController = [[FANoteClockViewController alloc] initWithNoteEntity:entity delegate:self];
+    UINavigationController *modalNavController = [[UINavigationController alloc] initWithRootViewController:noteClockViewController];
+    [self presentViewController:modalNavController animated:YES completion:^{
+        [self.navigationController popToViewController:self animated:NO];
+    }];
+}
+
+- (void)dismissClockViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

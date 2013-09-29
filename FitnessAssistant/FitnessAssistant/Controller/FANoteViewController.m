@@ -7,19 +7,23 @@
 //
 
 #import "FANoteViewController.h"
+#import "FANoteBookViewController.h"
 
 @interface FANoteViewController ()
+
+@property (nonatomic, strong) id noteEntity;
 
 @end
 
 @implementation FANoteViewController
 
-- (id)initWithDelegate:(id)delegate
+- (id)initWithNoteEntity:(id)noteEntity delegate:(id)delegate
 {
     self = [super initWithDelegate:delegate];
     
     if (self) {
         
+        _noteEntity = noteEntity;
     }
     
     return self;
@@ -36,4 +40,8 @@
     return [FANoteView class];
 }
 
+- (void)clockButtonClicked:(UIButton *)button
+{
+    [(FANoteBookViewController *)self.delegate presentClockViewControllerWithNoteEntity:self.noteEntity];
+}
 @end

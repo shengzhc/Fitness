@@ -11,4 +11,6 @@
 
 @interface FANoteDetailEditViewController : FAViewController
 
+- (id)initWithDelegate:(id)delegate;
+
 @end
