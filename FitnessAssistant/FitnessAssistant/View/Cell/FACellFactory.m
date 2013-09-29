@@ -24,6 +24,13 @@
             
             }
             break;
+        case CellTypeNote:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellTypeNote"];
+            if (!cell) {
+                
+                cell = [[FANoteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellTypeNote"];
+            }
+            break;
         case CellTypeDefault:
             cell = [tableView dequeueReusableCellWithIdentifier:@"CellTypeDefault"];
             if (!cell) {

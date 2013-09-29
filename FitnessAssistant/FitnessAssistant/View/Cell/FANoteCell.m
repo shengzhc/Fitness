@@ -1,29 +1,26 @@
 //
-//  FANoteBookCell.m
+//  FANoteCell.m
 //  FitnessAssistant
 //
 //  Created by Shengzhe Chen on 9/28/13.
 //  Copyright (c) 2013 iBros. All rights reserved.
 //
 
-#import "FANoteBookCell.h"
+#import "FANoteCell.h"
 
 #define BUTTON_WIDTH 80.0f
 
-@interface FANoteBookCell ()
+@interface FANoteCell ()
 
 @property (nonatomic, strong) UIButton *editButton;
 @property (nonatomic, strong) UIButton *deleteButton;
-@property (nonatomic, strong) UIImageView *quickStartImageView;
-@property (nonatomic, strong) UILabel *quickStartLabel;
 
 @end
 
-@implementation FANoteBookCell {
+@implementation FANoteCell {
     
     CGPoint _originContentCenter;
     CGPoint _leftBoundaryCenter;
-    CGPoint _rightBoundaryCenter;
     CGPoint _cBoundCenter;
 }
 
@@ -51,21 +48,9 @@
         _deleteButton.titleLabel.font = [UIFont boldFontWithSize:16];
         _deleteButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         
-        _quickStartImageView = [[UIImageView alloc] init];
-        _quickStartImageView.backgroundColor = [UIColor redColor];
-        
-        _quickStartLabel = [UILabel labelWithFrame:CGRectZero
-                                              text:@"Starting..."
-                                         alignment:NSTextAlignmentCenter
-                                              font:[UIFont fontWithSize:26]
-                                         textColor:[UIColor blackColor]];
-        [_quickStartLabel sizeToFit];
-        [_quickStartImageView addSubview:_quickStartLabel];
-        
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self.contentView.superview insertSubview:_editButton belowSubview:self.contentView];
         [self.contentView.superview insertSubview:_deleteButton belowSubview:self.contentView];
-        [self.contentView.superview insertSubview:_quickStartImageView belowSubview:self.contentView];
     }
     
     return self;
@@ -79,12 +64,9 @@
     
     self.deleteButton.frame = [self.deleteButton alignedRectInSuperviewForSize:CGSizeMake(BUTTON_WIDTH, edgeLength) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsVerticalCenter | FAAlignmentOptionsRight)];
     self.editButton.frame = [self.editButton alignedRectInSuperviewForSize:CGSizeMake(BUTTON_WIDTH, edgeLength) offset:CGSizeMake(BUTTON_WIDTH, 0) options:(FAAlignmentOptionsVerticalCenter | FAAlignmentOptionsRight)];
-    self.quickStartImageView.frame = [self.quickStartImageView alignedRectInSuperviewForSize:CGSizeMake(self.contentView.bounds.size.width - BUTTON_WIDTH * 2.0, self.contentView.bounds.size.height - 2) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsVerticalCenter | FAAlignmentOptionsLeft)];
-    self.quickStartLabel.frame = [self.quickStartLabel alignedRectInSuperviewForSize:self.quickStartLabel.bounds.size offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsVerticalCenter)];
     
     _cBoundCenter = CGPointMake(CGRectGetMidX(self.contentView.bounds), CGRectGetMidY(self.contentView.bounds));
     _leftBoundaryCenter = CGPointMake(_cBoundCenter.x - BUTTON_WIDTH * 2.0, _cBoundCenter.y);
-    _rightBoundaryCenter = CGPointMake(_cBoundCenter.x + self.bounds.size.width - BUTTON_WIDTH * 2.0, _cBoundCenter.y);
 }
 
 - (void)didRecognizerPanGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer
@@ -119,10 +101,6 @@
             
             [self setContentViewCenter:_cBoundCenter animated:YES];
         }
-        else if ((destContentCenter.x - _cBoundCenter.x) > self.quickStartLabel.horizontalEnding) {
-            
-            [self setContentViewCenter:_rightBoundaryCenter animated:YES];
-        }
         else {
             
             [self setContentViewCenter:_cBoundCenter animated:YES];
@@ -138,47 +116,24 @@
 
 - (void)setContentViewCenter:(CGPoint)center animated:(BOOL)animated
 {
-    if (center.x < _leftBoundaryCenter.x || center.x > _rightBoundaryCenter.x) {
+    if (center.x < _leftBoundaryCenter.x || center.x > _cBoundCenter.x ) {
         
         return;
     }
-    
-    CGFloat destAlaph = 0.0;
-    
-    if (center.x > _cBoundCenter.x) {
-        
-        destAlaph = 0.2 + (center.x - _cBoundCenter.x) / self.quickStartLabel.horizontalEnding * 0.8;
-        if (destAlaph > 1.0) {
-            destAlaph = 1.0;
-        }
-    }
-    else {
-        destAlaph = 0.2;
-    }
-    
+
     if (!animated) {
         
         self.contentView.center = center;
-        self.quickStartImageView.alpha = destAlaph;
-        self.quickStartLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:destAlaph];
     }
     else {
-
+        
         [UIView animateWithDuration:0.1
                               delay:0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^ {
-                             
                              self.contentView.center = center;
-                             self.quickStartImageView.alpha = destAlaph;
-                             self.quickStartLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:destAlaph];
                          }
                          completion:^(BOOL finished) {
-                             
-                             if (destAlaph == 1.0) {
-                                 [self setContentViewCenter:_cBoundCenter animated:YES];
-                                 [self.delegate activateQuickStartAtCell:self];
-                             }
                          }];
     }
 }
@@ -197,7 +152,6 @@
     }
     
 }
-
 
 
 @end

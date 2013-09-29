@@ -41,6 +41,7 @@
 		E77558BB17F7669D00616663 /* whiteButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589E17F7669D00616663 /* whiteButton@2x.png */; };
 		E77558BC17F7669D00616663 /* whiteButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E775589F17F7669D00616663 /* whiteButtonHighlight.png */; };
 		E77558BD17F7669D00616663 /* whiteButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E77558A017F7669D00616663 /* whiteButtonHighlight@2x.png */; };
+		E77558C017F7E38A00616663 /* FANoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E77558BF17F7E38A00616663 /* FANoteCell.m */; };
 		E7BE12D217F699A400B84795 /* UILabel+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C217F699A300B84795 /* UILabel+FAServices.m */; };
 		E7BE12D417F699A400B84795 /* FAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12C817F699A300B84795 /* FAGeometry.m */; };
 		E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE12CC17F699A400B84795 /* UIView+FAServices.m */; };
@@ -121,6 +122,8 @@
 		E775589E17F7669D00616663 /* whiteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButton@2x.png"; sourceTree = "<group>"; };
 		E775589F17F7669D00616663 /* whiteButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButtonHighlight.png; sourceTree = "<group>"; };
 		E77558A017F7669D00616663 /* whiteButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E77558BE17F7E38A00616663 /* FANoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteCell.h; sourceTree = "<group>"; };
+		E77558BF17F7E38A00616663 /* FANoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteCell.m; sourceTree = "<group>"; };
 		E7BE12C117F699A300B84795 /* UILabel+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FAServices.h"; sourceTree = "<group>"; };
 		E7BE12C217F699A300B84795 /* UILabel+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FAServices.m"; sourceTree = "<group>"; };
 		E7BE12C717F699A300B84795 /* FAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAGeometry.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				E775587E17F74F7500616663 /* FANoteBookCell.m */,
 				E775588017F75CC400616663 /* FACellFactory.h */,
 				E775588117F75CC400616663 /* FACellFactory.m */,
+				E77558BE17F7E38A00616663 /* FANoteCell.h */,
+				E77558BF17F7E38A00616663 /* FANoteCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				E7BE12F317F69E5C00B84795 /* FANoteView.m in Sources */,
 				E775588217F75CC400616663 /* FACellFactory.m in Sources */,
 				E7BE12E117F69DF900B84795 /* FANoteBookViewController.m in Sources */,
+				E77558C017F7E38A00616663 /* FANoteCell.m in Sources */,
 				E7BE12EA17F69E2500B84795 /* FANoteClockViewController.m in Sources */,
 				E7DE50E817EFD895006A67D6 /* FAAppDelegate.m in Sources */,
 				E7BE12FC17F69E8200B84795 /* FAStatisticView.m in Sources */,

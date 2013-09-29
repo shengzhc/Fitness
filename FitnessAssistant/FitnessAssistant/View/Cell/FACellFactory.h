@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "FACell.h"
 #import "FANoteBookCell.h"
+#import "FANoteCell.h"
 
 typedef enum
 {
     CellTypeNoteBook,
+    CellTypeNote,
     CellTypeDefault
 }CellType;
 

@@ -80,7 +80,6 @@
         [self.interactiveCell restoreCellAnimated:YES];
         self.interactiveCell = (FANoteBookCell *)cell;
     }
-    
 }
 
 - (void)editButtonClickedAtCell:(FACell *)cell
