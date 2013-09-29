@@ -81,14 +81,18 @@
 - (void)statisticBtnClicked:(UIButton *)sender
 {
 //    [self.navigationController pushViewController:self.statisticViewController animated:YES];
+    
 //  Now work as New button.
     if (self.popupCoverView == nil) {
-        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:self.view.frame];
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     } else {
         [self.popupCoverView reset];
     }
+    [self.navigationController.navigationBar.superview addSubview:self.popupCoverView];
     
-    [self.view addSubview:self.popupCoverView];
+    //[[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
+    
+    //[self.view addSubview:self.popupCoverView];
 }
 
 - (void)presentNoteViewControllerWithNoteEntity:(id)entity
