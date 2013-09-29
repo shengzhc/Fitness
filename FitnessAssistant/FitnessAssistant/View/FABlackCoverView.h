@@ -8,10 +8,13 @@
 
 #import "FAView.h"
 
-@interface FABlackCoverView : FAView
+@interface FABlackCoverView : FAView <UIGestureRecognizerDelegate>
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor withDuration:(float)time;
 - (void)setAlpha:(CGFloat)alpha withDuration:(float)time;
 - (void)removeBackgroundWithDuration:(float)time;
+- (void)reset;
+- (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer;
+- (void)comeIn;
 
 @end

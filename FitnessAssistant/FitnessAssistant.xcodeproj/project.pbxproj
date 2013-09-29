@@ -14,6 +14,8 @@
 		07577EE217F8830300BF137C /* FAPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EE117F8830200BF137C /* FAPopUpView.m */; };
 		07577EE517F883C600BF137C /* FABlackCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EE417F883C600BF137C /* FABlackCoverView.m */; };
 		07577EE817F88EB600BF137C /* FAPopupCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EE717F88EB600BF137C /* FAPopupCoverView.m */; };
+		07577EEB17F89BDE00BF137C /* FAMenuCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EEA17F89BDE00BF137C /* FAMenuCoverView.m */; };
+		07577EEE17F89C0100BF137C /* FAMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EED17F89C0100BF137C /* FAMenuView.m */; };
 		E775587217F73AB900616663 /* UIFont+FAServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587117F73AB900616663 /* UIFont+FAServices.m */; };
 		E775587917F74EAB00616663 /* FACell.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587817F74EAB00616663 /* FACell.m */; };
 		E775587C17F74ECE00616663 /* FAPanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E775587B17F74ECE00616663 /* FAPanCell.m */; };
@@ -100,6 +102,10 @@
 		07577EE417F883C600BF137C /* FABlackCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FABlackCoverView.m; path = ../FABlackCoverView.m; sourceTree = "<group>"; };
 		07577EE617F88EB600BF137C /* FAPopupCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAPopupCoverView.h; path = FitnessAssistant/View/FAPopupCoverView.h; sourceTree = SOURCE_ROOT; };
 		07577EE717F88EB600BF137C /* FAPopupCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAPopupCoverView.m; path = FitnessAssistant/View/FAPopupCoverView.m; sourceTree = SOURCE_ROOT; };
+		07577EE917F89BDE00BF137C /* FAMenuCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAMenuCoverView.h; sourceTree = "<group>"; };
+		07577EEA17F89BDE00BF137C /* FAMenuCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAMenuCoverView.m; sourceTree = "<group>"; };
+		07577EEC17F89C0100BF137C /* FAMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAMenuView.h; sourceTree = "<group>"; };
+		07577EED17F89C0100BF137C /* FAMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAMenuView.m; sourceTree = "<group>"; };
 		E775587017F73AB900616663 /* UIFont+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FAServices.h"; sourceTree = "<group>"; };
 		E775587117F73AB900616663 /* UIFont+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FAServices.m"; sourceTree = "<group>"; };
 		E775587717F74EAB00616663 /* FACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FACell.h; sourceTree = "<group>"; };
@@ -351,6 +357,10 @@
 				07577EE717F88EB600BF137C /* FAPopupCoverView.m */,
 				07577EE017F8830200BF137C /* FAPopUpView.h */,
 				07577EE117F8830200BF137C /* FAPopUpView.m */,
+				07577EE917F89BDE00BF137C /* FAMenuCoverView.h */,
+				07577EEA17F89BDE00BF137C /* FAMenuCoverView.m */,
+				07577EEC17F89C0100BF137C /* FAMenuView.h */,
+				07577EED17F89C0100BF137C /* FAMenuView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,6 +619,7 @@
 				E775587F17F74F7500616663 /* FANoteBookCell.m in Sources */,
 				E7BE12E717F69E1400B84795 /* FANoteDetailEditViewController.m in Sources */,
 				E7DE50E417EFD895006A67D6 /* main.m in Sources */,
+				07577EEE17F89C0100BF137C /* FAMenuView.m in Sources */,
 				E7BE12F917F69E7600B84795 /* FANoteClockView.m in Sources */,
 				E7BE12F317F69E5C00B84795 /* FANoteView.m in Sources */,
 				E775588217F75CC400616663 /* FACellFactory.m in Sources */,
@@ -623,6 +634,7 @@
 				E775587C17F74ECE00616663 /* FAPanCell.m in Sources */,
 				07577EE517F883C600BF137C /* FABlackCoverView.m in Sources */,
 				E7BE12D617F699A400B84795 /* UIView+FAServices.m in Sources */,
+				07577EEB17F89BDE00BF137C /* FAMenuCoverView.m in Sources */,
 				E7BE12DE17F699BA00B84795 /* FAViewController.m in Sources */,
 				E7BE12E417F69E0500B84795 /* FANoteViewController.m in Sources */,
 				E775587217F73AB900616663 /* UIFont+FAServices.m in Sources */,

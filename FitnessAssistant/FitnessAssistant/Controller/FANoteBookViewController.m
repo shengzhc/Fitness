@@ -11,6 +11,7 @@
 #import "FANoteViewController.h"
 #import "FANoteClockViewController.h"
 #import "FAPopupCoverView.h"
+#import "FAMenuCoverView.h"
 
 @interface FANoteBookViewController ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIButton *statisticBtn;
 @property (nonatomic, strong) FAStatisticViewController *statisticViewController;
 @property FAPopupCoverView *popupCoverView;
+@property FAMenuCoverView *menuCoverView;
 
 @end
 
@@ -45,6 +47,7 @@
         _statisticBtn.titleLabel.font = [UIFont fontWithSize:16];
         [_statisticBtn addTarget:self action:@selector(statisticBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [_statisticBtn sizeToFit];
+        
     }
     
     return self;
@@ -75,7 +78,14 @@
 
 - (void)menuBtnClicked:(UIButton *)sender
 {
+    if (self.menuCoverView == nil) {
+        self.menuCoverView = [[FAMenuCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    } else {
+        [self.menuCoverView reset];
+    }
     
+    [self.view addSubview:self.menuCoverView];
+    [self.menuCoverView comeIn];
 }
 
 - (void)statisticBtnClicked:(UIButton *)sender
@@ -83,7 +93,7 @@
 //    [self.navigationController pushViewController:self.statisticViewController animated:YES];
 //  Now work as New button.
     if (self.popupCoverView == nil) {
-        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:self.view.frame];
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     } else {
         [self.popupCoverView reset];
     }

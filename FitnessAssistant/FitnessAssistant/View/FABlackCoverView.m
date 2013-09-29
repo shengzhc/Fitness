@@ -8,6 +8,12 @@
 
 #import "FABlackCoverView.h"
 
+@interface FABlackCoverView()
+
+@property UITapGestureRecognizer *tapGesture;
+
+@end
+
 @implementation FABlackCoverView
 
 - (id)initWithFrame:(CGRect)frame
@@ -15,6 +21,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+        
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureHandler:)];
+        _tapGesture.numberOfTapsRequired = 1;
+        _tapGesture.numberOfTouchesRequired = 1;
+        [self addGestureRecognizer:_tapGesture];
+        
+        
     }
     return self;
 }
@@ -36,6 +49,26 @@
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
+}
+
+- (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer
+{
+    
+}
+
+- (void)comeIn
+{
+    
+}
+
+- (void)reset
+{
+    //Dummy method here.
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    return (touch.view == self);
 }
 
 @end
