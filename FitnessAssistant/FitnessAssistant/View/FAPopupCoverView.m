@@ -49,6 +49,7 @@
 {
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
     self.gravity = [[UIGravityBehavior alloc] initWithItems:@[self.popupView]];
+    self.gravity.magnitude = 2.5f;
     [self.animator addBehavior:self.gravity];
     
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.popupView]];

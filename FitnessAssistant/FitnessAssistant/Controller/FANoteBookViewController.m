@@ -16,7 +16,7 @@
 @interface FANoteBookViewController ()
 
 @property (nonatomic, strong) UIButton *menuBtn;
-@property (nonatomic, strong) UIButton *statisticBtn;
+@property (nonatomic, strong) UIButton *addBtn;
 @property (nonatomic, strong) FAStatisticViewController *statisticViewController;
 @property FAPopupCoverView *popupCoverView;
 @property FAMenuCoverView *menuCoverView;
@@ -40,13 +40,13 @@
         [_menuBtn addTarget:self action:@selector(menuBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [_menuBtn sizeToFit];
         
-        _statisticBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_statisticBtn setTitle:@"Statistic" forState:UIControlStateNormal];
-        [_statisticBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [_statisticBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-        _statisticBtn.titleLabel.font = [UIFont fontWithSize:16];
-        [_statisticBtn addTarget:self action:@selector(statisticBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [_statisticBtn sizeToFit];
+        _addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_addBtn setTitle:@"New" forState:UIControlStateNormal];
+        [_addBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_addBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+        _addBtn.titleLabel.font = [UIFont fontWithSize:16];
+        [_addBtn addTarget:self action:@selector(addBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [_addBtn sizeToFit];
         
     }
     
@@ -58,7 +58,7 @@
     [super viewDidLoad];
     self.title = @"Note Book";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.menuBtn];
-    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.statisticBtn]];
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.addBtn]];
 }
 
 - (Class)viewClass
@@ -88,15 +88,21 @@
     [self.menuCoverView comeIn];
 }
 
-- (void)statisticBtnClicked:(UIButton *)sender
+- (void)addBtnClicked:(UIButton *)sender
 {
 //    [self.navigationController pushViewController:self.statisticViewController animated:YES];
+    
 //  Now work as New button.
     if (self.popupCoverView == nil) {
-        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
     } else {
         [self.popupCoverView reset];
     }
+    
+    //[self.navigationController.navigationBar.superview addSubview:self.popupCoverView];
+    
+    //[[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
     
     [self.view addSubview:self.popupCoverView];
 }
