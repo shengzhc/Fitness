@@ -50,7 +50,9 @@
 
 - (void)reset
 {
-    
+    _menuView = [[FAMenuView alloc] initWithFrame:CGRectZero];
+    [self addSubview:_menuView];
+
 }
 
 - (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer

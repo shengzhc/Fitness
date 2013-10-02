@@ -31,6 +31,9 @@
 {
     [UIView animateWithDuration:0.5f animations:^{
         self.center = CGPointMake(self.center.x, self.center.y + self.frame.size.height);
+    }completion:^(BOOL finished) {
+        [self.superview removeFromSuperview];
+        [self removeFromSuperview];
     }];
 }
 
