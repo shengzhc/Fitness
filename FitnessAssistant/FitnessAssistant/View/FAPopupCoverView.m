@@ -61,6 +61,13 @@
     [collision addBoundaryWithIdentifier:@"boundary" fromPoint:startPoint toPoint:endPoint];
 }
 
+- (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        [self.popupView dismiss];
+    }
+}
+
 - (void)reset
 {
     [self initSelf];

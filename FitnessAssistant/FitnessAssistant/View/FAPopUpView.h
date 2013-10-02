@@ -10,4 +10,6 @@
 
 @interface FAPopUpView : FAView
 
+- (void)dismiss;
+
 @end

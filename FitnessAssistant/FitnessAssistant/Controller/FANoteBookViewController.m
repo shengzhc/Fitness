@@ -84,7 +84,9 @@
         [self.menuCoverView reset];
     }
     
-    [self.view addSubview:self.menuCoverView];
+    
+    [[UIApplication sharedApplication].windows[0] addSubview:self.menuCoverView];
+    //[self.view addSubview:self.menuCoverView];
     [self.menuCoverView comeIn];
 }
 
@@ -102,9 +104,9 @@
     
     //[self.navigationController.navigationBar.superview addSubview:self.popupCoverView];
     
-    //[[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
+    [[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
     
-    [self.view addSubview:self.popupCoverView];
+    //[self.view addSubview:self.popupCoverView];
 }
 
 - (void)presentNoteViewControllerWithNoteEntity:(id)entity
