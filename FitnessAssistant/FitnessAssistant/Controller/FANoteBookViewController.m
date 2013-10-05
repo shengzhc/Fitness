@@ -25,7 +25,6 @@
 
 @implementation FANoteBookViewController
 
-
 - (id)initWithDelegate:(id)delegate
 {
     self = [super initWithDelegate:delegate];
@@ -66,6 +65,11 @@
     return [FANoteBookView class];
 }
 
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+#pragma mark Convenience
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 - (FAStatisticViewController *)statisticViewController
 {
     if (!_statisticViewController) {
@@ -74,39 +78,6 @@
     }
     
     return _statisticViewController;
-}
-
-- (void)menuBtnClicked:(UIButton *)sender
-{
-    if (self.menuCoverView == nil) {
-        self.menuCoverView = [[FAMenuCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    } else {
-        [self.menuCoverView reset];
-    }
-    
-    
-    [[UIApplication sharedApplication].windows[0] addSubview:self.menuCoverView];
-    //[self.view addSubview:self.menuCoverView];
-    [self.menuCoverView comeIn];
-}
-
-- (void)addBtnClicked:(UIButton *)sender
-{
-//    [self.navigationController pushViewController:self.statisticViewController animated:YES];
-    
-//  Now work as New button.
-    if (self.popupCoverView == nil) {
-        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    } else {
-        [self.popupCoverView reset];
-    }
-    
-    //[self.navigationController.navigationBar.superview addSubview:self.popupCoverView];
-    
-    [[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
-    
-    //[self.view addSubview:self.popupCoverView];
 }
 
 - (void)presentNoteViewControllerWithNoteEntity:(id)entity
@@ -128,5 +99,36 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+#pragma mark Button
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+- (void)menuBtnClicked:(UIButton *)sender
+{
+    if (self.menuCoverView == nil) {
+        self.menuCoverView = [[FAMenuCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    } else {
+        [self.menuCoverView reset];
+    }
+    
+    
+    [[UIApplication sharedApplication].windows[0] addSubview:self.menuCoverView];
+    //[self.view addSubview:self.menuCoverView];
+    [self.menuCoverView comeIn];
+}
 
+- (void)addBtnClicked:(UIButton *)sender
+{
+//  Now work as New button.
+    if (self.popupCoverView == nil) {
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    } else {
+        [self.popupCoverView reset];
+    }
+    
+    [[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
+    
+}
 @end

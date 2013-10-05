@@ -54,12 +54,11 @@
     self.clockButton.frame = [self.clockButton alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width - 10, 40) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsBottom)];
     self.tableView.frame = [self.tableView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - self.clockButton.bounds.size.height) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsTop)];
 }
-
-- (void)clockButtonClicked:(UIButton *)button
-{
-    [(FANoteViewController *)self.delegate clockButtonClicked:button];
-}
-
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+#pragma mark UITableViewDataSource & UITableViewDelegate
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.datasource.count;
@@ -77,6 +76,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60.0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+#pragma mark Cell Delegate
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+- (void)clockButtonClicked:(UIButton *)button
+{
+    [(FANoteViewController *)self.delegate clockButtonClicked:button];
 }
 
 - (void)editButtonClickedAtCell:(FACell *)cell
