@@ -26,8 +26,6 @@
         _tapGesture.numberOfTapsRequired = 1;
         _tapGesture.numberOfTouchesRequired = 1;
         [self addGestureRecognizer:_tapGesture];
-        
-        
     }
     return self;
 }
@@ -51,24 +49,15 @@
     }];
 }
 
-- (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer
-{
-    
-}
-
-- (void)comeIn
-{
-    
-}
-
-- (void)reset
-{
-    //Dummy method here.
-}
-
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
     return (touch.view == self);
 }
+
+#pragma mark - For override in subclass.
+
+- (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer { }
+- (void)comeIn { }
+- (void)reset { }
 
 @end

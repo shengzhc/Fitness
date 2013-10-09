@@ -18,7 +18,6 @@
 
 @end
 
-
 @implementation FAPopupCoverView
 
 - (id)initWithFrame:(CGRect)frame
@@ -26,23 +25,22 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initSelf];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissCover) name:@"FANewPopUpDone" object:nil];
     }
     return self;
 }
 
 - (void)initSelf
 {
-    _popupView = [[FAPopUpView alloc] init];
+    self.popupView = [[FAPopUpView alloc] init];
     [self addSubview:_popupView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissCover) name:@"FANewPopUpDone" object:nil];
-    
 }
 
 - (void)layoutSubviews
 {
     self.popupView.frame = CGRectMake(self.center.x - 100, 0, 200, 150);
     [self addGravityToPopup];
-    [self setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5] withDuration:0.5];
+    [self setAlpha:0.5 withDuration:0.5];
 }
 
 - (void)addGravityToPopup
@@ -64,7 +62,7 @@
 - (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        [self.popupView dismiss];
+        [self dismissCover];
     }
 }
 
@@ -75,7 +73,14 @@
 
 - (void)dismissCover
 {
-   [self setAlpha:0.0 withDuration:0.5];
+    NSLog(@"Popup receive");
+    [UIView animateWithDuration:0.5f animations:^{
+        self.popupView.center = CGPointMake(self.popupView.center.x, self.frame.origin.y - self.popupView.frame.size.height/2);
+        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+        [self.popupView removeFromSuperview];
+    }];
 }
 
 - (void)dealloc

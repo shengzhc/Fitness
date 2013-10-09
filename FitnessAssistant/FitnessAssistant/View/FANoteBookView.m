@@ -56,7 +56,7 @@
 {
     FACell *cell = [FACellFactory cellForTableView:tableView cellType:CellTypeNoteBook];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     [cell setData:nil delegate:self];
     return cell;
 }

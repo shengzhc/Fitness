@@ -29,29 +29,17 @@
     return self;
 }
 
-- (void)layoutSubviews
-{
-}
-
 - (void)comeIn
 {
     self.menuView.frame = CGRectMake(0, self.frame.size.height, self.frame.size.width, self.frame.size.height - 125);
-    
     [self setAlpha:0.5 withDuration:DURATIONTIME];
     [self.menuView menuUp];
-    
-//    [UIView animateWithDuration:DURATIONTIME animations:^{
-//        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-//        //self.alpha = 0.5;
-//        self.menuView.center = self.center;//CGPointMake(self.menuView.center.x, self.menuView.center.y - self.menuView.frame.size.height);
-//    }];
-    
 }
 
 - (void)reset
 {
-    _menuView = [[FAMenuView alloc] initWithFrame:CGRectZero];
-    [self addSubview:_menuView];
+    self.menuView = [[FAMenuView alloc] initWithFrame:CGRectZero];
+    [self addSubview:self.menuView];
 
 }
 

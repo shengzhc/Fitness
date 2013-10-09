@@ -50,7 +50,6 @@
     // The valid area is the pioints within the distance of CLOSERADIOUS
     if ((pow(location.x, 2) + pow(location.y, 2)) < pow(CLOSERADIOUS, 2)) {
         self.closeButton.highlighted = YES;
-        
         if (recognizer.state == UIGestureRecognizerStateEnded) {
             [self dismiss];
         }
@@ -61,14 +60,8 @@
 
 - (void)dismiss
 {
+    NSLog(@"Pop post");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FANewPopUpDone" object:self];
-    
-    [UIView animateWithDuration:0.5f animations:^{
-        self.center = CGPointMake(self.center.x, self.superview.frame.origin.y - self.frame.size.height/2);
-    } completion:^(BOOL finished) {
-        [self.superview removeFromSuperview];
-        [self removeFromSuperview];
-    } ];
 }
 
 @end
