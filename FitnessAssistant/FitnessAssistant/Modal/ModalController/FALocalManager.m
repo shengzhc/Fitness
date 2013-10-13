@@ -22,6 +22,11 @@
     return localManager;
 }
 
++ (BOOL)isEnabled
+{
+    return YES;
+}
+
 - (id)init
 {
     self = [super init];
@@ -55,7 +60,7 @@
 
 - (NSString *)filename
 {
-    return @"local_note.dat";
+    return @"note_local.dat";
 }
 
 @end

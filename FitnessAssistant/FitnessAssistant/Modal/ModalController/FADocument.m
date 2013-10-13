@@ -8,17 +8,23 @@
 
 #import "FADocument.h"
 
+@interface FADocument ()
+
+@property (nonatomic, strong) NSMutableArray *data;
+
+@end
+
 @implementation FADocument
 
 - (BOOL)loadFromContents:(id)contents ofType:(NSString *)typeName error:(NSError *__autoreleasing *)outError
 {
-    
     return YES;
 }
 
 - (id)contentsForType:(NSString *)typeName error:(NSError **)outError
 {
-    return nil;
+    NSString *d = @"";
+    return [d dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end

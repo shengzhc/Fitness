@@ -9,6 +9,12 @@
 #import "FAAppDelegate.h"
 #import "FANoteBookViewController.h"
 
+@interface FAAppDelegate ()
+
+@property (nonatomic, strong) FARepository *repository;
+
+@end
+
 @implementation FAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -27,14 +33,9 @@
 
     [self.window makeKeyAndVisible];
     
-//    NSURL *ubiq = [[NSFileManager defaultManager]
-//                   URLForUbiquityContainerIdentifier:nil];
-//    if (ubiq) {
-//        NSLog(@"iCloud access at %@", ubiq);
-//        // TODO: Load document...
-//    } else {
-//        NSLog(@"No iCloud access");
-//    }
+    self.repository = [FARepository sharedRepository];
+    
+    NSLog(@"%@", [FARepository sharedRepository]);
     
     return YES;
 }

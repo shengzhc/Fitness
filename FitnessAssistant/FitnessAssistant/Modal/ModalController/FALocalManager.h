@@ -11,6 +11,8 @@
 @interface FALocalManager : NSObject
 
 + (FALocalManager *)sharedLocalManager;
++ (BOOL)isEnabled;
+
 - (id)load;
 - (BOOL)save:(id)object;
 

@@ -11,5 +11,6 @@
 @interface FAiCloudManager : NSObject
 
 + (FAiCloudManager *)sharediCloudManager;
++ (BOOL)isEnabled;
 
 @end

@@ -37,13 +37,36 @@
     self = [super init];
     
     if (self) {
-
-        _localManager = [FALocalManager sharedLocalManager];
-        _iCloudManager = [FAiCloudManager sharediCloudManager];
+        
+        _localManager = nil;
+        _iCloudManager = nil;
+        
+        if ([FALocalManager isEnabled]) {
+            _localManager = [FALocalManager sharedLocalManager];
+        }
+        
+        if ([FAiCloudManager isEnabled]) {
+            _iCloudManager = [FAiCloudManager sharediCloudManager];
+        }
     }
     
     return self;
 }
 
+- (NSString *)description
+{
+    NSMutableString *desc = [[NSMutableString alloc] init];
+    
+    if (self.localManager) {
+        
+        [desc appendString:@"Local Manager Enabled.\n"];
+    }
+    
+    if (self.iCloudManager) {
+        [desc appendString:@"iCould Manager Enabled.\n"];
+    }
+    
+    return desc;
+}
 
 @end

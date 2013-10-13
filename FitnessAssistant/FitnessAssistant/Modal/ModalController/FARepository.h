@@ -10,4 +10,6 @@
 
 @interface FARepository : NSObject
 
++ (FARepository *)sharedRepository;
+
 @end
