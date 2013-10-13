@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#define FANoteItemEntityKeyName @"name"
+#define FANoteItemEntityKeyWeight @"weight"
+#define FANoteItemEntityKeyUnitType @"unit"
+#define FANoteItemEntityKeyReps @"reps"
+#define FANoteItemEntityKeySets @"sets"
+
+#define FANoteItemEntityKeyTimeOfSet @"timeOfSet"
+#define FANoteItemEntityKeyTimeBetweenSets @"timeBetweenSets"
+#define FANoteItemEntityKeyIsWeightAutoIncrement @"isWeightAutoIncrement"
+#define FANoteItemEntityKeyCountForWeightAutoIncrement @"countForWeightAutoIncrement"
+#define FANoteItemEntityKeyWeightAutoIncrement @"weightAutoIncrement"
+#define FANoteItemEntityKeyCountForNoteItem @"countForNoteItem"
+
 typedef enum {
     
     WeightUnitTypePound = 0,
@@ -15,14 +28,13 @@ typedef enum {
     
 }WeightUnitType;
 
-@interface FANoteItemEntity : NSObject
+@interface FANoteItemEntity : NSObject < NSCoding >
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSNumber *weight;
 @property (nonatomic, assign) WeightUnitType unit;
 @property (nonatomic, strong) NSNumber *reps;
 @property (nonatomic, strong) NSNumber *sets;
-@property (nonatomic, strong) NSNumber *elapseTime;
 
 // Total consuming time = timeOfSet * sets + (sets-1) * timeBetweenSets;
 @property (nonatomic, strong) NSNumber *timeOfSet;
@@ -37,5 +49,7 @@ typedef enum {
 
 // How many time have the user worked on this item
 @property (nonatomic, strong) NSNumber *countForNoteItem;
+
+@property (nonatomic, strong) NSNumber *elapseTime;
 
 @end

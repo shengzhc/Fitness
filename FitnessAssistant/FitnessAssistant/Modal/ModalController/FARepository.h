@@ -1,13 +1,13 @@
 //
-//  FANoteItemEntity.m
+//  FARepository.h
 //  FitnessAssistant
 //
 //  Created by Shengzhe Chen on 10/12/13.
 //  Copyright (c) 2013 iBros. All rights reserved.
 //
 
-#import "FANoteItemEntity.h"
+#import <Foundation/Foundation.h>
 
-@implementation FANoteItemEntity
+@interface FARepository : NSObject
 
 @end

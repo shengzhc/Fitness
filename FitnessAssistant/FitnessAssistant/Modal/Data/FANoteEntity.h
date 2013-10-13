@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "FANoteItemEntity.h"
 
+#define FANoteEntityKeyName @"name"
+#define FANoteEntityKeyNoteItemEntityArray @"noteItemEntityArray"
+#define FANoteEntityKeyNoteStatus @"status"
+#define FANoteEntityKeyFinishedDateArray @"finishedDateArray"
+#define FANoteEntityKeyCoolDownForSuspend @"coolDownForSuspend"
+#define FANoteEntityKeyCoolDownBetweenItems @"coolDownBetweenItems"
+
 typedef enum {
     
     FANoteEntityStatusTypeReady = 0,
@@ -19,7 +26,7 @@ typedef enum {
     
 }FANoteEntityStatusType;
 
-@interface FANoteEntity : NSObject
+@interface FANoteEntity : NSObject < NSCoding >
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSMutableArray *noteItemEntityArray;
