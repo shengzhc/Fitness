@@ -26,6 +26,16 @@
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+    
+//    NSURL *ubiq = [[NSFileManager defaultManager]
+//                   URLForUbiquityContainerIdentifier:nil];
+//    if (ubiq) {
+//        NSLog(@"iCloud access at %@", ubiq);
+//        // TODO: Load document...
+//    } else {
+//        NSLog(@"No iCloud access");
+//    }
+    
     return YES;
 }
 
