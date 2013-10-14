@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "FALocalManager.h"
 #import "FAiCloudManager.h"
+#import "FAMemoryDelegate.h"
 
-@interface FAMemoryManager : NSObject
-
-+ (FAMemoryManager *)sharedMemoryManager;
+@interface FAMemoryManager : NSObject < FAMemoryDelegate >
 
 @end

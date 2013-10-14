@@ -35,7 +35,7 @@
     
     if (self) {
         
-        _memoryManager = [FAMemoryManager sharedMemoryManager];
+        _memoryManager = [[FAMemoryManager alloc] init];
     }
     
     return self;

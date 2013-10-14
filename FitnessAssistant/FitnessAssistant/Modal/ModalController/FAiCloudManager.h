@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAMemoryDelegate.h"
+#import "FADocument.h"
 
-@interface FAiCloudManager : NSObject
+@interface FAiCloudManager : NSObject < FADocumentDelegate >
 
-+ (FAiCloudManager *)sharediCloudManager;
 + (BOOL)isEnabled;
+- (id)initWithMemoryDelegate:(id < FAMemoryDelegate >)memoryDelegate;
+- (void)load;
 
 @end

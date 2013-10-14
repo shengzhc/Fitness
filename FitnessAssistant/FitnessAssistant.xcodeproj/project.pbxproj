@@ -125,6 +125,7 @@
 		E7120490180A67A90037C32A /* FAiCloudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAiCloudManager.m; sourceTree = "<group>"; };
 		E7120492180A82BD0037C32A /* FADocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FADocument.h; sourceTree = "<group>"; };
 		E7120493180A82BD0037C32A /* FADocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FADocument.m; sourceTree = "<group>"; };
+		E7120495180B66200037C32A /* FAMemoryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAMemoryDelegate.h; sourceTree = "<group>"; };
 		E775587017F73AB900616663 /* UIFont+FAServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FAServices.h"; sourceTree = "<group>"; };
 		E775587117F73AB900616663 /* UIFont+FAServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FAServices.m"; sourceTree = "<group>"; };
 		E775587717F74EAB00616663 /* FACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FACell.h; sourceTree = "<group>"; };
@@ -270,6 +271,7 @@
 				E7120490180A67A90037C32A /* FAiCloudManager.m */,
 				E7120492180A82BD0037C32A /* FADocument.h */,
 				E7120493180A82BD0037C32A /* FADocument.m */,
+				E7120495180B66200037C32A /* FAMemoryDelegate.h */,
 			);
 			path = ModalController;
 			sourceTree = "<group>";

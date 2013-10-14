@@ -18,13 +18,15 @@
 
 - (BOOL)loadFromContents:(id)contents ofType:(NSString *)typeName error:(NSError *__autoreleasing *)outError
 {
+    id object = [NSKeyedUnarchiver unarchiveObjectWithData:contents];
+    [self.delegate didUpdateWithContent:object];
     return YES;
 }
 
 - (id)contentsForType:(NSString *)typeName error:(NSError **)outError
 {
-    NSString *d = @"";
-    return [d dataUsingEncoding:NSUTF8StringEncoding];
+    id content = [self.delegate contentForiCloud];
+    return [NSKeyedArchiver archivedDataWithRootObject:content];
 }
 
 @end

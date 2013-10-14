@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FADocumentDelegate <NSObject>
+
+- (void)didUpdateWithContent:(id)content;
+- (id)contentForiCloud;
+
+@end
+
 @interface FADocument : UIDocument
+
+@property (nonatomic, weak) id < FADocumentDelegate > delegate;
 
 @end

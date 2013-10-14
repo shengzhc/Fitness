@@ -8,48 +8,43 @@
 
 #import "FALocalManager.h"
 
-@implementation FALocalManager
+@interface FALocalManager ()
 
-+ (FALocalManager *)sharedLocalManager
-{
-    static FALocalManager *localManager;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        localManager = [[FALocalManager alloc] init];
-    });
-    
-    return localManager;
-}
+@property (nonatomic, weak) id< FAMemoryDelegate > memoryDelegate;
+
+@end
+
+@implementation FALocalManager
 
 + (BOOL)isEnabled
 {
     return YES;
 }
 
-- (id)init
+- (id)initWithMemoryDelegate:(id)memoryDelegate;
 {
     self = [super init];
     
     if (self) {
         
+        _memoryDelegate = memoryDelegate;
     }
     
     return self;
 }
 
-- (id)load
+- (void)load
 {
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self filepath]]) {
         
-        return [NSKeyedUnarchiver unarchiveObjectWithFile:[self filepath]];
+        id object = [NSKeyedUnarchiver unarchiveObjectWithFile:[self filepath]];
+        [self.memoryDelegate updateMemoryWithObject:object];
     }
-    
-    return nil;
 }
 
-- (BOOL)save:(id)object
+- (BOOL)save
 {
+    id object = [self.memoryDelegate memoryDataSource];
     return [NSKeyedArchiver archiveRootObject:object toFile:[self filepath]];
 }
 

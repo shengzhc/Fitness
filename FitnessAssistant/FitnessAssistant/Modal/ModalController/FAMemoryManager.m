@@ -14,23 +14,12 @@
 
 @property (nonatomic, strong) FALocalManager *localManager;
 @property (nonatomic, strong) FAiCloudManager *iCloudManager;
-@property (nonatomic, strong) NSMutableArray *dataSource;
+
+@property (nonatomic, strong) NSMutableDictionary *notes;
 
 @end
 
 @implementation FAMemoryManager
-
-+ (FAMemoryManager *)sharedMemoryManager
-{
-    static FAMemoryManager *memoryManager;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        memoryManager = [[FAMemoryManager alloc] init];
-    });
-    
-    return memoryManager;
-}
 
 - (id)init
 {
@@ -40,17 +29,48 @@
         
         _localManager = nil;
         _iCloudManager = nil;
+        _notes = [NSMutableDictionary new];
         
         if ([FALocalManager isEnabled]) {
-            _localManager = [FALocalManager sharedLocalManager];
+            _localManager = [[FALocalManager alloc] initWithMemoryDelegate:self];
+            [self loadFromLocal];
         }
         
         if ([FAiCloudManager isEnabled]) {
-            _iCloudManager = [FAiCloudManager sharediCloudManager];
+            _iCloudManager = [[FAiCloudManager alloc] initWithMemoryDelegate:self];
+            [self loadFromiCloud];
         }
     }
     
     return self;
+}
+
+- (void)loadFromLocal
+{
+    [self.localManager load];
+}
+
+- (void)loadFromiCloud
+{
+    [self.iCloudManager load];
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+#pragma mark FAMemoryDelegate
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+- (id)memoryDataSource
+{
+    return [self.notes allValues];
+}
+
+- (void)updateMemoryWithObject:(id)object
+{
+    for (FANoteEntity *noteEntity in object) {
+        
+        [self.notes setObject:noteEntity forKey:noteEntity.name];
+    }
 }
 
 - (NSString *)description

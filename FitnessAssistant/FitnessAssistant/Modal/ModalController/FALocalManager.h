@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAMemoryDelegate.h"
 
 @interface FALocalManager : NSObject
 
-+ (FALocalManager *)sharedLocalManager;
 + (BOOL)isEnabled;
+- (id)initWithMemoryDelegate:(id < FAMemoryDelegate >)memoryDelegate;
 
-- (id)load;
-- (BOOL)save:(id)object;
+- (void)load;
+- (BOOL)save;
 
 @end
