@@ -15,5 +15,5 @@
 + (BOOL)isEnabled;
 - (id)initWithMemoryDelegate:(id < FAMemoryDelegate >)memoryDelegate;
 - (void)load;
-
+- (BOOL)save;
 @end

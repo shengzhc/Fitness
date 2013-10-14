@@ -7,9 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FANoteItemEntity.h"
+#import "FANoteEntity.h"
 
 @interface FARepository : NSObject
 
 + (FARepository *)sharedRepository;
+
+- (NSInteger)numberOfNoteEntity;
+- (FANoteEntity *)noteEntityForKey:(NSString *)key;
+- (FANoteEntity *)noteEntityForIndex:(NSInteger)index;
+
+- (void)addNoteEntity:(FANoteEntity *)noteEntity;
+- (void)updateNoteEntity:(FANoteEntity *)noteEntity;
+- (void)deleteNoteEntity:(FANoteEntity *)noteEntity;
 
 @end

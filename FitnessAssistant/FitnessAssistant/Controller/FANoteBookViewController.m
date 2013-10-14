@@ -15,6 +15,7 @@
 
 @interface FANoteBookViewController ()
 
+@property (nonatomic, strong) FANoteBookView *view;
 @property (nonatomic, strong) UIButton *menuBtn;
 @property (nonatomic, strong) UIButton *addBtn;
 @property (nonatomic, strong) FAStatisticViewController *statisticViewController;
@@ -114,13 +115,19 @@
     
     
     [[UIApplication sharedApplication].windows[0] addSubview:self.menuCoverView];
-    //[self.view addSubview:self.menuCoverView];
     [self.menuCoverView comeIn];
 }
 
 - (void)addBtnClicked:(UIButton *)sender
 {
 //  Now work as New button.
+    FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
+    [[FARepository sharedRepository] addNoteEntity:noteEntity];
+    [self.view.tableView reloadData];
+    return;
+
+    return;
+    
     if (self.popupCoverView == nil) {
         self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 

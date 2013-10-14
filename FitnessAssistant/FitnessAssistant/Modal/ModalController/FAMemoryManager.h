@@ -13,4 +13,11 @@
 
 @interface FAMemoryManager : NSObject < FAMemoryDelegate >
 
+@property (readonly, strong) NSMutableDictionary *notes;
+
+- (id)initWithRepository:(id)repository;
+
+- (void)updateNoteEntity:(FANoteEntity *)noteEntity;
+- (void)deleteNoteEntity:(FANoteEntity *)noteEntity;
+
 @end

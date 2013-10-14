@@ -28,6 +28,7 @@
 - (void)setData:(id)data
        delegate:(id)delegate
 {
+    self.data = data;
     self.delegate = delegate;
 }
 

@@ -10,4 +10,6 @@
 
 @interface FANoteBookView : FAView < UITableViewDataSource, UITableViewDelegate, FANoteBookCellDelegate >
 
+@property (nonatomic, strong) UITableView *tableView;
+
 @end

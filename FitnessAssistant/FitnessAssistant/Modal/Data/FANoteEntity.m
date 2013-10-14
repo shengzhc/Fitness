@@ -10,6 +10,17 @@
 
 @implementation FANoteEntity
 
++ (FANoteEntity *)defaultEntity
+{
+    FANoteEntity *defaultNoteEntity = [[FANoteEntity alloc] init];
+    defaultNoteEntity.name = [NSDate date].description;
+    defaultNoteEntity.status = FANoteEntityStatusTypeReady;
+    defaultNoteEntity.coolDownForSuspend = 60.0f;
+    defaultNoteEntity.coolDownBetweenItems = 100.0f;
+    
+    return defaultNoteEntity;
+}
+
 - (id)init
 {
     self = [super init];

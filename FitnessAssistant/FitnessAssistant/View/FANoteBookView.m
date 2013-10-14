@@ -11,8 +11,6 @@
 
 @interface FANoteBookView ()
 
-@property (nonatomic, strong) UIButton *addNoteBtn;
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) FANoteBookCell *interactiveCell;
 
 @end
@@ -29,6 +27,7 @@
         _tableView = [[UITableView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         [self addSubview:_tableView];
        
@@ -49,15 +48,16 @@
 ////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return [[FARepository sharedRepository] numberOfNoteEntity];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FACell *cell = [FACellFactory cellForTableView:tableView cellType:CellTypeNoteBook];
+    FANoteEntity *noteEntity = [[FARepository sharedRepository] noteEntityForIndex:indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    [cell setData:nil delegate:self];
+    cell.textLabel.text = noteEntity.name;
+    [cell setData:noteEntity delegate:self];
     return cell;
 }
 
@@ -98,7 +98,8 @@
 
 - (void)deleteButtonClickedAtCell:(FACell *)cell
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [[FARepository sharedRepository] deleteNoteEntity:cell.data];
+    [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell:cell]] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 - (void)activateQuickStartAtCell:(FACell *)cell

@@ -50,7 +50,7 @@
 
 - (NSString *)filepath
 {
-    return [NSHomeDirectory() stringByAppendingPathComponent:[self filename]];
+    return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self filename]];
 }
 
 - (NSString *)filename

@@ -14,6 +14,7 @@
 @interface FACell : UITableViewCell
 
 @property (nonatomic, strong) id delegate;
+@property (nonatomic, strong) id data;
 
 - (void)setData:(id)data
        delegate:(id)delegate;

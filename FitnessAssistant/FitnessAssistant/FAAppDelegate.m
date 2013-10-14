@@ -35,8 +35,6 @@
     
     self.repository = [FARepository sharedRepository];
     
-    NSLog(@"%@", [FARepository sharedRepository]);
-    
     return YES;
 }
 

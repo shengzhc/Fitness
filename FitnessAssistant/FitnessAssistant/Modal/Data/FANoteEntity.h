@@ -39,4 +39,6 @@ typedef enum {
 //unit should be second
 @property (nonatomic, assign) NSTimeInterval coolDownBetweenItems;
 
++ (FANoteEntity *)defaultEntity;
+
 @end

@@ -50,6 +50,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFinishGatheringNotification:) name:NSMetadataQueryDidFinishGatheringNotification object:self.query];
     [self.query startQuery];
 }
+
+- (BOOL)save
+{
+    [self.doc updateChangeCount:UIDocumentChangeDone];
+    return YES;
+}
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Notification

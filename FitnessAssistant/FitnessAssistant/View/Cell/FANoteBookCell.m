@@ -62,7 +62,8 @@
         [_quickStartLabel sizeToFit];
         [_quickStartImageView addSubview:_quickStartLabel];
         
-        self.contentView.backgroundColor = [UIColor whiteColor];
+        self.contentView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1];
+        self.backgroundColor = [UIColor clearColor];
         [self.contentView.superview insertSubview:_editButton belowSubview:self.contentView];
         [self.contentView.superview insertSubview:_deleteButton belowSubview:self.contentView];
         [self.contentView.superview insertSubview:_quickStartImageView belowSubview:self.contentView];
@@ -74,6 +75,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    self.contentView.frame = CGRectInset(self.bounds, 0, 2);
     
     CGFloat edgeLength = self.contentView.bounds.size.height;
     
@@ -82,7 +84,7 @@
     self.quickStartImageView.frame = [self.quickStartImageView alignedRectInSuperviewForSize:CGSizeMake(self.contentView.bounds.size.width - BUTTON_WIDTH * 2.0, self.contentView.bounds.size.height - 2) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsVerticalCenter | FAAlignmentOptionsLeft)];
     self.quickStartLabel.frame = [self.quickStartLabel alignedRectInSuperviewForSize:self.quickStartLabel.bounds.size offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsVerticalCenter)];
     
-    _cBoundCenter = CGPointMake(CGRectGetMidX(self.contentView.bounds), CGRectGetMidY(self.contentView.bounds));
+    _cBoundCenter = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     _leftBoundaryCenter = CGPointMake(_cBoundCenter.x - BUTTON_WIDTH * 2.0, _cBoundCenter.y);
     _rightBoundaryCenter = CGPointMake(_cBoundCenter.x + self.bounds.size.width - BUTTON_WIDTH * 2.0, _cBoundCenter.y);
 }

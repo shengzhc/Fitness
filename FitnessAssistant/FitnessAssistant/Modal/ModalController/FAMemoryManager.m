@@ -14,45 +14,71 @@
 
 @property (nonatomic, strong) FALocalManager *localManager;
 @property (nonatomic, strong) FAiCloudManager *iCloudManager;
-
-@property (nonatomic, strong) NSMutableDictionary *notes;
+@property (nonatomic, weak) id repository;
 
 @end
 
 @implementation FAMemoryManager
 
-- (id)init
+- (id)initWithRepository:(id)repository
 {
     self = [super init];
     
     if (self) {
         
+        _repository = repository;
         _localManager = nil;
         _iCloudManager = nil;
         _notes = [NSMutableDictionary new];
         
         if ([FALocalManager isEnabled]) {
             _localManager = [[FALocalManager alloc] initWithMemoryDelegate:self];
-            [self loadFromLocal];
         }
         
         if ([FAiCloudManager isEnabled]) {
             _iCloudManager = [[FAiCloudManager alloc] initWithMemoryDelegate:self];
-            [self loadFromiCloud];
         }
+        
+        [self load];
     }
     
     return self;
 }
 
-- (void)loadFromLocal
+- (void)load
 {
-    [self.localManager load];
+    if (self.localManager) {
+        [self.localManager load];
+    }
+    
+    if (self.iCloudManager) {
+        [self.iCloudManager load];
+    }
 }
 
-- (void)loadFromiCloud
+- (void)save
 {
-    [self.iCloudManager load];
+    if (self.localManager) {
+        [self.localManager save];
+    }
+    
+    if (self.iCloudManager) {
+        [self.iCloudManager save];
+    }
+}
+
+- (void)deleteNoteEntity:(FANoteEntity *)noteEntity
+{
+    if ([self.notes valueForKey:noteEntity.name]) {
+        [self.notes removeObjectForKey:noteEntity.name];
+        [self save];
+    }
+}
+
+- (void)updateNoteEntity:(FANoteEntity *)noteEntity
+{
+    [self.notes setObject:noteEntity forKey:noteEntity.name];
+    [self save];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -68,8 +94,11 @@
 - (void)updateMemoryWithObject:(id)object
 {
     for (FANoteEntity *noteEntity in object) {
-        
         [self.notes setObject:noteEntity forKey:noteEntity.name];
+    }
+    
+    if ([self.repository respondsToSelector:@selector(didUpdateMemory:)]) {
+        [self.repository performSelector:@selector(didUpdateMemory:) withObject:self.notes.allValues];
     }
 }
 
