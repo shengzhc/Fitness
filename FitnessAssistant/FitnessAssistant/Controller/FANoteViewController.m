@@ -8,11 +8,13 @@
 
 #import "FANoteViewController.h"
 #import "FANoteBookViewController.h"
+#import "FANoteBookDetailCoverView.h"
 
 @interface FANoteViewController ()
 
 @property (nonatomic, strong) id noteEntity;
 @property (nonatomic, strong) UIButton *addButton;
+@property (nonatomic, strong) FANoteBookDetailCoverView* noteDetailCoverView;
 
 @end
 
@@ -62,6 +64,8 @@
 
 - (void)addButtonClicked
 {
-    
+    self.noteDetailCoverView = [[FANoteBookDetailCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[UIApplication sharedApplication].windows[0] addSubview:self.noteDetailCoverView];
+    [self.noteDetailCoverView comeIn];
 }
 @end

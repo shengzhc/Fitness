@@ -16,6 +16,8 @@
 		07577EE817F88EB600BF137C /* FAPopupCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EE717F88EB600BF137C /* FAPopupCoverView.m */; };
 		07577EEB17F89BDE00BF137C /* FAMenuCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EEA17F89BDE00BF137C /* FAMenuCoverView.m */; };
 		07577EEE17F89C0100BF137C /* FAMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07577EED17F89C0100BF137C /* FAMenuView.m */; };
+		077A7ECA180D01EB003E5B29 /* FANoteBookDetailCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 077A7EC9180D01EB003E5B29 /* FANoteBookDetailCoverView.m */; };
+		077A7ECD180D0231003E5B29 /* FANoteDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 077A7ECC180D0231003E5B29 /* FANoteDetailView.m */; };
 		E7120484180A67640037C32A /* FANoteEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7120480180A67640037C32A /* FANoteEntity.m */; };
 		E7120485180A67640037C32A /* FANoteItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7120482180A67640037C32A /* FANoteItemEntity.m */; };
 		E7120488180A67820037C32A /* FARepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E7120487180A67820037C32A /* FARepository.m */; };
@@ -111,6 +113,10 @@
 		07577EEA17F89BDE00BF137C /* FAMenuCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAMenuCoverView.m; sourceTree = "<group>"; };
 		07577EEC17F89C0100BF137C /* FAMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAMenuView.h; sourceTree = "<group>"; };
 		07577EED17F89C0100BF137C /* FAMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAMenuView.m; sourceTree = "<group>"; };
+		077A7EC8180D01EB003E5B29 /* FANoteBookDetailCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteBookDetailCoverView.h; sourceTree = "<group>"; };
+		077A7EC9180D01EB003E5B29 /* FANoteBookDetailCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteBookDetailCoverView.m; sourceTree = "<group>"; };
+		077A7ECB180D0231003E5B29 /* FANoteDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FANoteDetailView.h; path = FitnessAssistant/View/FANoteDetailView.h; sourceTree = SOURCE_ROOT; };
+		077A7ECC180D0231003E5B29 /* FANoteDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FANoteDetailView.m; path = FitnessAssistant/View/FANoteDetailView.m; sourceTree = SOURCE_ROOT; };
 		E712047F180A67640037C32A /* FANoteEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteEntity.h; sourceTree = "<group>"; };
 		E7120480180A67640037C32A /* FANoteEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FANoteEntity.m; sourceTree = "<group>"; };
 		E7120481180A67640037C32A /* FANoteItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FANoteItemEntity.h; sourceTree = "<group>"; };
@@ -412,6 +418,10 @@
 				07577EEA17F89BDE00BF137C /* FAMenuCoverView.m */,
 				07577EEC17F89C0100BF137C /* FAMenuView.h */,
 				07577EED17F89C0100BF137C /* FAMenuView.m */,
+				077A7EC8180D01EB003E5B29 /* FANoteBookDetailCoverView.h */,
+				077A7EC9180D01EB003E5B29 /* FANoteBookDetailCoverView.m */,
+				077A7ECB180D0231003E5B29 /* FANoteDetailView.h */,
+				077A7ECC180D0231003E5B29 /* FANoteDetailView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -676,6 +686,7 @@
 				E7BE12D217F699A400B84795 /* UILabel+FAServices.m in Sources */,
 				E7BE12F017F69E5200B84795 /* FANoteBookView.m in Sources */,
 				E7120491180A67A90037C32A /* FAiCloudManager.m in Sources */,
+				077A7ECA180D01EB003E5B29 /* FANoteBookDetailCoverView.m in Sources */,
 				E7120484180A67640037C32A /* FANoteEntity.m in Sources */,
 				E7BE12DB17F699B100B84795 /* FAView.m in Sources */,
 				E775587F17F74F7500616663 /* FANoteBookCell.m in Sources */,
@@ -687,6 +698,7 @@
 				E7120485180A67640037C32A /* FANoteItemEntity.m in Sources */,
 				E775588217F75CC400616663 /* FACellFactory.m in Sources */,
 				E712048B180A67920037C32A /* FAMemoryManager.m in Sources */,
+				077A7ECD180D0231003E5B29 /* FANoteDetailView.m in Sources */,
 				E7BE12E117F69DF900B84795 /* FANoteBookViewController.m in Sources */,
 				07577EE217F8830300BF137C /* FAPopUpView.m in Sources */,
 				E77558C017F7E38A00616663 /* FANoteCell.m in Sources */,
