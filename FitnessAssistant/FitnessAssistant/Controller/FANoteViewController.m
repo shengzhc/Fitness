@@ -12,6 +12,7 @@
 @interface FANoteViewController ()
 
 @property (nonatomic, strong) id noteEntity;
+@property (nonatomic, strong) UIButton *addButton;
 
 @end
 
@@ -24,6 +25,15 @@
     if (self) {
         
         _noteEntity = noteEntity;
+        
+        _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_addButton setTitle:@"New" forState:UIControlStateNormal];
+        [_addButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_addButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+        _addButton.titleLabel.font = [UIFont fontWithSize:16];
+        [_addButton sizeToFit];
+        [_addButton addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     
     return self;
@@ -33,6 +43,7 @@
 {
     [super viewDidLoad];
     self.title = @"Note";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addButton];
 }
 
 - (Class)viewClass
@@ -47,5 +58,10 @@
 - (void)clockButtonClicked:(UIButton *)button
 {
     [(FANoteBookViewController *)self.delegate presentClockViewControllerWithNoteEntity:self.noteEntity];
+}
+
+- (void)addButtonClicked
+{
+    
 }
 @end
