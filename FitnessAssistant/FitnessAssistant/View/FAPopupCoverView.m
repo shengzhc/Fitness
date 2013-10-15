@@ -73,7 +73,6 @@
 
 - (void)dismissCover
 {
-    NSLog(@"Popup receive");
     [UIView animateWithDuration:0.5f animations:^{
         self.popupView.center = CGPointMake(self.popupView.center.x, self.frame.origin.y - self.popupView.frame.size.height/2);
         self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];

@@ -60,7 +60,6 @@
 
 - (void)dismiss
 {
-    NSLog(@"Pop post");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FANewPopUpDone" object:self];
 }
 
