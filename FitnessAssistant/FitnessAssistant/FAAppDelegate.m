@@ -9,6 +9,12 @@
 #import "FAAppDelegate.h"
 #import "FANoteBookViewController.h"
 
+@interface FAAppDelegate ()
+
+@property (nonatomic, strong) FARepository *repository;
+
+@end
+
 @implementation FAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -26,6 +32,9 @@
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+    
+    self.repository = [FARepository sharedRepository];
+    
     return YES;
 }
 
