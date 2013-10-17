@@ -15,6 +15,9 @@
 
 @property UIImageView *closeButton;
 @property UILongPressGestureRecognizer *longPressGestureRecognizer;
+@property UILabel *nameLabel;
+@property UITextField *nameTextField;
+@property UIButton *doneButton;
 
 @end
 
@@ -33,6 +36,22 @@
         _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
         _longPressGestureRecognizer.minimumPressDuration = 0.01f;
         [self addGestureRecognizer:_longPressGestureRecognizer];
+        
+        _nameLabel = [[UILabel alloc] init];
+        _nameLabel.text = @"New Note";
+        [_nameLabel sizeToFit];
+        [self addSubview:_nameLabel];
+        
+        _nameTextField = [[UITextField alloc] init];
+        _nameTextField.layer.borderWidth = 1.0;
+        _nameTextField.layer.borderColor = [UIColor blueColor].CGColor;
+        [self addSubview:_nameTextField];
+        
+        _doneButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_doneButton addTarget:self action:@selector(doneButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
+        [self addSubview:_doneButton];
+        
     }
     return self;
 }
@@ -41,6 +60,11 @@
 {
     [self.closeButton sizeToFit];
     self.closeButton.center = CGPointMake(0.0, 0.0);  //Locate the close at the top left corner.
+}
+
+- (void)doneButtonHandler:(UIButton *)sender
+{
+    
 }
 
 - (void)gestureHandler:(UILongPressGestureRecognizer *)recognizer

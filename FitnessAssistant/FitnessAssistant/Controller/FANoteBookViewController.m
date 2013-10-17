@@ -125,8 +125,6 @@
     [[FARepository sharedRepository] addNoteEntity:noteEntity];
     [self.view.tableView reloadData];
     return;
-
-    return;
     
     if (self.popupCoverView == nil) {
         self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];

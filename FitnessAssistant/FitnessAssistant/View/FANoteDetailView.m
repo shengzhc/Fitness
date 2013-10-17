@@ -16,6 +16,7 @@
     UIScrollView *scrollView;
     
     UILabel *nameLabel;
+    
     UITextField *nameTextField;
     
     UILabel *weightLabel;
@@ -43,6 +44,9 @@
     UILabel *autoIncreaseWeightLabel;
     UITextField *autoIncreaseWeightTextField;
     UISlider *autoIncreaseWeightSlider;
+    
+    UIButton *doneButton;
+    UIButton *cancelButton;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -54,120 +58,153 @@
         self.layer.cornerRadius = 5.0;
         
         scrollView = [[UIScrollView alloc] init];
-        
+        [self addSubview:scrollView];
+        scrollView.backgroundColor = [UIColor clearColor];
+
         nameLabel = [[UILabel alloc] init];
         [nameLabel setTextAlignment:NSTextAlignmentRight];
+        nameLabel.text = @"Name";
+        [scrollView addSubview:nameLabel];
+       
         nameTextField = [[UITextField alloc] init];
-        
+        [scrollView addSubview:nameTextField];
+
         weightLabel = [[UILabel alloc] init];
         [weightLabel setTextAlignment:NSTextAlignmentRight];
+        weightLabel.text = @"Weight";
+        [scrollView addSubview:weightLabel];
+        
         weightTextField = [[UITextField alloc] init];
+        [scrollView addSubview:weightTextField];
+        
         weightUnitSegment = [[UISegmentedControl alloc] initWithItems:@[@"Kg", @"lb"]];
+        [scrollView addSubview:weightUnitSegment];
         
         repsLabel = [[UILabel alloc] init];
         [repsLabel setTextAlignment:NSTextAlignmentRight];
+        repsLabel.text = @"Reps";
+        [scrollView addSubview:repsLabel];
+
         repsTextField = [[UITextField alloc] init];
+        [scrollView addSubview:repsTextField];
+
         repsSlider = [[UISlider alloc] init];
+        [scrollView addSubview:repsSlider];
         
         setsLabel = [[UILabel alloc] init];
         [setsLabel setTextAlignment:NSTextAlignmentRight];
+        setsLabel.text = @"Sets";
+        [scrollView addSubview:setsLabel];
+
         setsTextField = [[UITextField alloc] init];
+        [scrollView addSubview:setsTextField];
+
         setsSlider = [[UISlider alloc] init];
+        [scrollView addSubview:setsSlider];
         
         timeOfSetsLabel = [[UILabel alloc] init];
         [timeOfSetsLabel setTextAlignment:NSTextAlignmentRight];
+        timeOfSetsLabel.text = @"Time of Sets";
+        [scrollView addSubview:timeOfSetsLabel];
+
         timeOfSetsTextField = [[UITextField alloc] init];
+        [scrollView addSubview:timeOfSetsTextField];
+
         timeOfSetsSlider = [[UISlider alloc] init];
+        [scrollView addSubview:timeOfSetsSlider];
         
         CDLabel = [[UILabel alloc] init];
         [CDLabel setTextAlignment:NSTextAlignmentRight];
+        CDLabel.text = @"CoolDown";
+        [scrollView addSubview:CDLabel];
+
         CDTextField = [[UITextField alloc] init];
+        [scrollView addSubview:CDTextField];
+
         CDSlider = [[UISlider alloc] init];
+        [scrollView addSubview:CDSlider];
         
         autoIncreaseLabel = [[UILabel alloc] init];
         [autoIncreaseLabel setTextAlignment:NSTextAlignmentRight];
+        autoIncreaseLabel.text = @"Auto Increase";
+        [scrollView addSubview:autoIncreaseLabel];
+
         autoIncreaseWeightLabel = [[UILabel alloc] init];
         [autoIncreaseWeightLabel setTextAlignment:NSTextAlignmentRight];
-        autoIncreaseWeightTextField = [[UITextField alloc] init];
-        autoIncreaseSwitch = [[UISwitch alloc] init];
-        autoIncreaseWeightSlider = [[UISlider alloc] init];
-        
-        [self addSubview:scrollView];
-        [scrollView addSubview:nameLabel];
-        [scrollView addSubview:nameTextField];
-        [scrollView addSubview:weightLabel];
-        [scrollView addSubview:weightTextField];
-        [scrollView addSubview:weightUnitSegment];
-        [scrollView addSubview:repsLabel];
-        [scrollView addSubview:repsTextField];
-        [scrollView addSubview:repsSlider];
-        [scrollView addSubview:setsLabel];
-        [scrollView addSubview:setsTextField];
-        [scrollView addSubview:setsSlider];
-        [scrollView addSubview:timeOfSetsLabel];
-        [scrollView addSubview:timeOfSetsTextField];
-        [scrollView addSubview:timeOfSetsSlider];
-        [scrollView addSubview:CDLabel];
-        [scrollView addSubview:CDTextField];
-        [scrollView addSubview:CDSlider];
-        [scrollView addSubview:autoIncreaseLabel];
-        [scrollView addSubview:autoIncreaseSwitch];
+        autoIncreaseWeightLabel.text = @"Auto Weight";
         [scrollView addSubview:autoIncreaseWeightLabel];
+
+        autoIncreaseWeightTextField = [[UITextField alloc] init];
         [scrollView addSubview:autoIncreaseWeightTextField];
+
+        autoIncreaseSwitch = [[UISwitch alloc] init];
+        [scrollView addSubview:autoIncreaseSwitch];
+
+        autoIncreaseWeightSlider = [[UISlider alloc] init];
 //        [scrollView addSubview:autoIncreaseWeightSlider];
         
+        cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [cancelButton addTarget:self action:@selector(cancelButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [cancelButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [cancelButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [scrollView addSubview:cancelButton];
+        
+        doneButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+        [doneButton addTarget:self action:@selector(doneButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [doneButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        [doneButton  setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [scrollView addSubview:doneButton];
     }
     return self;
 }
 
 - (void)layoutSubviews
 {
-    scrollView.frame = CGRectInset(self.frame, 10, 10);
+    scrollView.frame = CGRectInset(self.bounds, 5, 10);
+    scrollView.backgroundColor = [UIColor clearColor];
     
-    nameLabel.text = @"Name";
-    nameLabel.frame = CGRectMake(5, 5, 100, 25);
+    nameLabel.frame = CGRectMake(15, 5, 100, 25);
     nameTextField.frame = CGRectMake(CGRectGetMaxX(nameLabel.frame)+HORIZONOFFSET, CGRectGetMinY(nameLabel.frame), 150, CGRectGetHeight(nameLabel.frame));
     [self setBorderFor:nameTextField];
     
-    weightLabel.text = @"Weight";
     weightLabel.frame = CGRectOffset(nameLabel.frame, 0, VERTICALOFFSET);
     weightTextField.frame = CGRectMake(CGRectGetMinX(nameTextField.frame), CGRectGetMinY(weightLabel.frame), 40, CGRectGetHeight(weightLabel.frame));//[self getRectWithVerticalOffset:nameTextField.frame];
     [self setBorderFor:weightTextField];
     weightUnitSegment.frame = CGRectMake(CGRectGetMaxX(weightTextField.frame)+HORIZONOFFSET, CGRectGetMinY(weightTextField.frame), 50, CGRectGetHeight(weightTextField.frame));
     
-    repsLabel.text = @"Reps";
     repsLabel.frame = CGRectOffset(weightLabel.frame, 0, VERTICALOFFSET);
     repsTextField.frame = [self getRectWithVerticalOffset:weightTextField.frame];
     [self setBorderFor:repsTextField];
     repsSlider.frame = CGRectMake(CGRectGetMaxX(repsTextField.frame)+HORIZONOFFSET, CGRectGetMinY(repsTextField.frame), 100, CGRectGetHeight(repsTextField.frame));
     
-    setsLabel.text = @"Sets";
     setsLabel.frame = CGRectOffset(repsLabel.frame, 0, VERTICALOFFSET);
     setsTextField.frame = [self getRectWithVerticalOffset:repsTextField.frame];
     [self setBorderFor:setsTextField];
     setsSlider.frame = [self getRectWithVerticalOffset:repsSlider.frame];
     
-    timeOfSetsLabel.text = @"Time of Sets";
     timeOfSetsLabel.frame = CGRectOffset(setsLabel.frame, 0, VERTICALOFFSET);
     timeOfSetsTextField.frame = [self getRectWithVerticalOffset:setsTextField.frame];
     [self setBorderFor:timeOfSetsTextField];
     timeOfSetsSlider.frame = [self getRectWithVerticalOffset:setsSlider.frame];
     
-    CDLabel.text = @"CoolDown";
     CDLabel.frame = CGRectOffset(timeOfSetsLabel.frame, 0, VERTICALOFFSET);
     CDTextField.frame = [self getRectWithVerticalOffset:timeOfSetsTextField.frame];
     [self setBorderFor:CDTextField];
     CDSlider.frame = [self getRectWithVerticalOffset:timeOfSetsSlider.frame];
     
-    autoIncreaseLabel.text = @"Auto Increase";
     autoIncreaseLabel.frame = CGRectOffset(CDLabel.frame, 0, VERTICALOFFSET);
     autoIncreaseSwitch.frame = CGRectMake(CGRectGetMaxX(autoIncreaseLabel.frame)+HORIZONOFFSET, CGRectGetMinY(autoIncreaseLabel.frame), 50, CGRectGetHeight(autoIncreaseLabel.frame));
     
-    autoIncreaseWeightLabel.text = @"Auto Weight";
     autoIncreaseWeightLabel.frame = CGRectOffset(autoIncreaseLabel.frame, 0, VERTICALOFFSET);
     
-    scrollView.contentSize = CGSizeMake(CGRectGetWidth(scrollView.frame), CGRectGetMaxY(autoIncreaseWeightLabel.frame) + VERTICALOFFSET);
+    cancelButton.frame = CGRectMake(40, CGRectGetMaxY(autoIncreaseWeightLabel.frame)+50, 80, 30);
+    cancelButton.layer.cornerRadius = 6.0;
+    doneButton.frame = CGRectOffset(cancelButton.frame, 140, 0);
+    doneButton.layer.cornerRadius = 6.0;
     
+    scrollView.contentSize = CGSizeMake(CGRectGetWidth(scrollView.frame), CGRectGetMaxY(doneButton.frame) + VERTICALOFFSET);
 }
 
 - (void)setBorderFor:(UITextField *)textField
@@ -180,6 +217,16 @@
 - (CGRect)getRectWithVerticalOffset:(CGRect)frame
 {
     return CGRectOffset(frame, 0, VERTICALOFFSET);
+}
+
+- (void)cancelButtonHandler:(UIButton *)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelDetail" object:self];
+}
+
+- (void)doneButtonHandler:(UIButton *)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelDetail" object:self];
 }
 
 @end

@@ -20,6 +20,7 @@
         // Initialization code
         noteDetailView = [[FANoteDetailView alloc] init];
         [self addSubview:noteDetailView];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset) name:@"cancelDetail" object:Nil];
     }
     return self;
 }
@@ -41,6 +42,7 @@
 
 - (void)reset
 {
+    NSLog(@"reset");
     [UIView animateWithDuration:0.5f animations:^{
         self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
         noteDetailView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
@@ -50,10 +52,9 @@
     }];
 }
 
-- (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer
+- (void)dealloc
 {
-    [self reset];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
 
 @end
