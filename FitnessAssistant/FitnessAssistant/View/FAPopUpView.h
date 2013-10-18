@@ -11,5 +11,6 @@
 @interface FAPopUpView : FAView
 
 - (void)dismiss;
+@property UITextField *nameTextField;
 
 @end

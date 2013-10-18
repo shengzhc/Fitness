@@ -7,14 +7,12 @@
 //
 
 #import "FAPopupCoverView.h"
-#import "FAPopUpView.h"
 
 @interface FAPopupCoverView()
 
 //iOS 7 New Feature - Gravity.
 @property UIDynamicAnimator *animator;
 @property UIGravityBehavior *gravity;
-@property FAPopUpView *popupView;
 
 @end
 
@@ -25,7 +23,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initSelf];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissCover) name:@"FANewPopUpDone" object:nil];
     }
     return self;
 }
@@ -82,9 +79,6 @@
     }];
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+
 
 @end

@@ -16,7 +16,6 @@
 @property UIImageView *closeButton;
 @property UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property UILabel *nameLabel;
-@property UITextField *nameTextField;
 @property UIButton *doneButton;
 
 @end
@@ -31,10 +30,12 @@
         self.layer.cornerRadius = 5.0f;
         
         _closeButton = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"popup-close.png"] highlightedImage:[UIImage imageNamed:@"popup-close-highlighted.png"]];
+        [_closeButton sizeToFit];
         [self addSubview:_closeButton];
         
         _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
         _longPressGestureRecognizer.minimumPressDuration = 0.01f;
+        _longPressGestureRecognizer.cancelsTouchesInView = NO;  //This will deliever the touchEvent to the button & textfield on it.
         [self addGestureRecognizer:_longPressGestureRecognizer];
         
         _nameLabel = [[UILabel alloc] init];
@@ -52,25 +53,27 @@
         [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
         [_doneButton sizeToFit];
         [self addSubview:_doneButton];
-        
     }
     return self;
 }
 
 - (void)layoutSubviews
 {
-    [self.closeButton sizeToFit];
     [self.closeButton setCenter:CGPointMake(0.0, 0.0)];
     
     [self.nameTextField setFrame:CGRectMake(0, 0, 150, 30)];
     [self.nameTextField setCenter:CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/2)];
+    [self.nameTextField becomeFirstResponder];
     
     [self.nameLabel setCenter:CGPointMake(self.nameTextField.center.x, self.nameTextField.center.y - 40)];
     [self.doneButton setCenter:CGPointMake(self.nameTextField.center.x, self.nameTextField.center.y + 40)];
+//    [self.doneButton becomeFirstResponder];
 }
 
 - (void)doneButtonHandler:(UIButton *)sender
 {
+    NSLog(@"I am done");
+    
     if ([self.nameTextField.text isEqual:@""]) {
         [self shakeSelf];
     }else{

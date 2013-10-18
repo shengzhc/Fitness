@@ -7,9 +7,11 @@
 //
 
 #import "FABlackCoverView.h"
+#import "FAPopUpView.h"
 
 @interface FAPopupCoverView : FABlackCoverView
 
+@property FAPopUpView *popupView;
 - (void)reset;
 
 @end
