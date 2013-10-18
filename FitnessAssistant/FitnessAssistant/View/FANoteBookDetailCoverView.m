@@ -28,7 +28,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     noteDetailView.frame = CGRectInset(self.frame, 10.0, 20.0);
 }
 

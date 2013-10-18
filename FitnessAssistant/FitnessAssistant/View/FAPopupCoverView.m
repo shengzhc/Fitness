@@ -50,7 +50,7 @@
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.popupView]];
     [self.animator addBehavior:collision];
     
-    float boundary = self.frame.size.height/2 + self.popupView.frame.size.height/2;
+    float boundary = self.frame.size.height/2;// + self.popupView.frame.size.height/2;
     CGPoint startPoint = CGPointMake(0.0, boundary);
     CGPoint endPoint = CGPointMake(self.frame.size.width, boundary);
     [collision addBoundaryWithIdentifier:@"boundary" fromPoint:startPoint toPoint:endPoint];
@@ -78,7 +78,5 @@
         [self.popupView removeFromSuperview];
     }];
 }
-
-
 
 @end

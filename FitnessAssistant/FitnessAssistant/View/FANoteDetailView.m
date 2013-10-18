@@ -141,7 +141,7 @@
         [scrollView addSubview:autoIncreaseSwitch];
 
         autoIncreaseWeightSlider = [[UISlider alloc] init];
-//        [scrollView addSubview:autoIncreaseWeightSlider];
+        [scrollView addSubview:autoIncreaseWeightSlider];
         
         cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -162,7 +162,7 @@
 
 - (void)layoutSubviews
 {
-    scrollView.frame = CGRectInset(self.bounds, 5, 10);
+    scrollView.frame = CGRectInset(self.bounds, 5, 30);
     scrollView.backgroundColor = [UIColor clearColor];
     
     nameLabel.frame = CGRectMake(15, 5, 100, 25);
@@ -195,9 +195,14 @@
     CDSlider.frame = [self getRectWithVerticalOffset:timeOfSetsSlider.frame];
     
     autoIncreaseLabel.frame = CGRectOffset(CDLabel.frame, 0, VERTICALOFFSET);
+    [autoIncreaseLabel sizeToFit];
     autoIncreaseSwitch.frame = CGRectMake(CGRectGetMaxX(autoIncreaseLabel.frame)+HORIZONOFFSET, CGRectGetMinY(autoIncreaseLabel.frame), 50, CGRectGetHeight(autoIncreaseLabel.frame));
     
-    autoIncreaseWeightLabel.frame = CGRectOffset(autoIncreaseLabel.frame, 0, VERTICALOFFSET);
+    autoIncreaseWeightLabel.frame = CGRectOffset(CDLabel.frame, 0, VERTICALOFFSET*2);
+    autoIncreaseWeightTextField.frame = CGRectOffset(CDTextField.frame, 0, VERTICALOFFSET*2);
+    [self setBorderFor:autoIncreaseWeightTextField];
+    
+    autoIncreaseWeightSlider.frame = CGRectOffset(CDSlider.frame, 0, VERTICALOFFSET*2);
     
     cancelButton.frame = CGRectMake(40, CGRectGetMaxY(autoIncreaseWeightLabel.frame)+50, 80, 30);
     cancelButton.layer.cornerRadius = 6.0;

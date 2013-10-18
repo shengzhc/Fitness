@@ -67,13 +67,10 @@
     
     [self.nameLabel setCenter:CGPointMake(self.nameTextField.center.x, self.nameTextField.center.y - 40)];
     [self.doneButton setCenter:CGPointMake(self.nameTextField.center.x, self.nameTextField.center.y + 40)];
-//    [self.doneButton becomeFirstResponder];
 }
 
 - (void)doneButtonHandler:(UIButton *)sender
-{
-    NSLog(@"I am done");
-    
+{    
     if ([self.nameTextField.text isEqual:@""]) {
         [self shakeSelf];
     }else{
