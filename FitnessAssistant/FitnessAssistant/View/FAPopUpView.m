@@ -50,6 +50,7 @@
         _doneButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [_doneButton addTarget:self action:@selector(doneButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
         [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
+        [_doneButton sizeToFit];
         [self addSubview:_doneButton];
         
     }
@@ -59,12 +60,22 @@
 - (void)layoutSubviews
 {
     [self.closeButton sizeToFit];
-    self.closeButton.center = CGPointMake(0.0, 0.0);  //Locate the close at the top left corner.
+    [self.closeButton setCenter:CGPointMake(0.0, 0.0)];
+    
+    [self.nameTextField setFrame:CGRectMake(0, 0, 150, 30)];
+    [self.nameTextField setCenter:CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/2)];
+    
+    [self.nameLabel setCenter:CGPointMake(self.nameTextField.center.x, self.nameTextField.center.y - 40)];
+    [self.doneButton setCenter:CGPointMake(self.nameTextField.center.x, self.nameTextField.center.y + 40)];
 }
 
 - (void)doneButtonHandler:(UIButton *)sender
 {
-    
+    if ([self.nameTextField.text isEqual:@""]) {
+        [self shakeSelf];
+    }else{
+        [self dismiss];
+    }
 }
 
 - (void)gestureHandler:(UILongPressGestureRecognizer *)recognizer
@@ -85,6 +96,21 @@
 - (void)dismiss
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"FANewPopUpDone" object:self];
+}
+
+- (void)shakeSelf
+{
+    CGPoint center = self.center;
+    [UIView animateWithDuration:0.07 delay:0.0 options:UIViewAnimationOptionRepeat animations:^{
+        [UIView setAnimationRepeatCount:2.0];
+        self.center = CGPointMake(self.center.x - 10, self.center.y);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.07 animations:^{
+            self.center = CGPointMake(self.center.x + 20, self.center.y);
+        } completion:^(BOOL finished) {
+            [self setCenter:center];
+        }];
+    }];
 }
 
 @end

@@ -121,10 +121,10 @@
 - (void)addBtnClicked:(UIButton *)sender
 {
 //  Now work as New button.
-    FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
-    [[FARepository sharedRepository] addNoteEntity:noteEntity];
-    [self.view.tableView reloadData];
-    return;
+//    FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
+//    [[FARepository sharedRepository] addNoteEntity:noteEntity];
+//    [self.view.tableView reloadData];
+//    return;
     
     if (self.popupCoverView == nil) {
         self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
