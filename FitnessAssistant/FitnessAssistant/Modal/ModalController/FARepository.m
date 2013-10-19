@@ -78,7 +78,7 @@
 
 - (void)didUpdateMemory:(id)object
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [[NSNotificationCenter defaultCenter] postNotificationName:FARepositoryNotesUpdateNotification object:nil];
 }
 
 - (NSString *)description

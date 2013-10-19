@@ -48,6 +48,7 @@
         [_addBtn addTarget:self action:@selector(addBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [_addBtn sizeToFit];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateNotes:) name:FARepositoryNotesUpdateNotification object:nil];
     }
     
     return self;
@@ -61,11 +62,15 @@
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.addBtn]];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FARepositoryNotesUpdateNotification object:nil];
+}
+
 - (Class)viewClass
 {
     return [FANoteBookView class];
 }
-
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Convenience
@@ -100,6 +105,11 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)didUpdateNotes:(NSNotification *)notification
+{
+    [self.view.tableView reloadData];
+}
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Button
@@ -121,12 +131,10 @@
 - (void)addBtnClicked:(UIButton *)sender
 {
 //  Now work as New button.
-    FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
-    [[FARepository sharedRepository] addNoteEntity:noteEntity];
-    [self.view.tableView reloadData];
-    return;
-
-    return;
+//    FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
+//    [[FARepository sharedRepository] addNoteEntity:noteEntity];
+//    [self.view.tableView reloadData];
+//    return;
     
     if (self.popupCoverView == nil) {
         self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];

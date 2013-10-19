@@ -10,6 +10,8 @@
 #import "FANoteItemEntity.h"
 #import "FANoteEntity.h"
 
+#define FARepositoryNotesUpdateNotification @"FARepositoryNotesUpdateNotification"
+
 @interface FARepository : NSObject
 
 + (FARepository *)sharedRepository;

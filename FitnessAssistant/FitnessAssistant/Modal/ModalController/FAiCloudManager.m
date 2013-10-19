@@ -44,7 +44,7 @@
 - (void)load
 {
     self.query = [[NSMetadataQuery alloc] init];
-    self.query.searchScopes = @[NSMetadataQueryUbiquitousDataScope];
+    self.query.searchScopes = @[NSMetadataQueryUbiquitousDocumentsScope];
     self.query.predicate = [NSPredicate predicateWithFormat:@"%K == %@", NSMetadataItemFSNameKey, [self filename]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFinishGatheringNotification:) name:NSMetadataQueryDidFinishGatheringNotification object:self.query];
@@ -79,11 +79,11 @@
     if ([query resultCount] == 0)
     {
         NSLog(@"File not found on iCloud");
-        NSURL *url = [[[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil] URLByAppendingPathComponent:[self filename]];
+        NSURL *url = [[[[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil] URLByAppendingPathComponent:@"Documents"] URLByAppendingPathComponent:[self filename]];
         self.doc = [[FADocument alloc] initWithFileURL:url];
         self.doc.delegate = self;
         
-        [self.doc saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+        [self.doc saveToURL:[self.doc fileURL] forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             
             NSLog(@"Saving %@", [NSNumber numberWithBool:success]);
 
@@ -124,6 +124,6 @@
 
 - (NSString *)filename
 {
-    return @"note_icloud.dat";
+    return @"note_icloud1.dat";
 }
 @end
