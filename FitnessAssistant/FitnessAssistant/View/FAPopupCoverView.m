@@ -7,14 +7,12 @@
 //
 
 #import "FAPopupCoverView.h"
-#import "FAPopUpView.h"
 
 @interface FAPopupCoverView()
 
 //iOS 7 New Feature - Gravity.
 @property UIDynamicAnimator *animator;
 @property UIGravityBehavior *gravity;
-@property FAPopUpView *popupView;
 
 @end
 
@@ -25,7 +23,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initSelf];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissCover) name:@"FANewPopUpDone" object:nil];
     }
     return self;
 }
@@ -53,7 +50,7 @@
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.popupView]];
     [self.animator addBehavior:collision];
     
-    float boundary = self.frame.size.height/2 + self.popupView.frame.size.height/2;
+    float boundary = self.frame.size.height/2;// + self.popupView.frame.size.height/2;
     CGPoint startPoint = CGPointMake(0.0, boundary);
     CGPoint endPoint = CGPointMake(self.frame.size.width, boundary);
     [collision addBoundaryWithIdentifier:@"boundary" fromPoint:startPoint toPoint:endPoint];
@@ -73,7 +70,6 @@
 
 - (void)dismissCover
 {
-    NSLog(@"Popup receive");
     [UIView animateWithDuration:0.5f animations:^{
         self.popupView.center = CGPointMake(self.popupView.center.x, self.frame.origin.y - self.popupView.frame.size.height/2);
         self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
@@ -81,11 +77,6 @@
         [self removeFromSuperview];
         [self.popupView removeFromSuperview];
     }];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

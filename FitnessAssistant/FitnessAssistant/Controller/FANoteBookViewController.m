@@ -49,6 +49,7 @@
         [_addBtn sizeToFit];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateNotes:) name:FARepositoryNotesUpdateNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissPopView) name:@"FANewPopUpDone" object:nil];
     }
     
     return self;
@@ -65,6 +66,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:FARepositoryNotesUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (Class)viewClass
@@ -145,5 +147,27 @@
     
     [[UIApplication sharedApplication].windows[0] addSubview:self.popupCoverView];
     
+}
+
+#pragma mark-New Popup View 
+- (void)dismissPopView
+{
+    [UIView animateWithDuration:0.5f animations:^{
+        self.popupCoverView.popupView.center = CGPointMake(self.popupCoverView.popupView.center.x, self.popupCoverView.frame.origin.y - self.popupCoverView.popupView.frame.size.height/2);
+        self.popupCoverView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+    } completion:^(BOOL finished) {
+        
+        NSString *name = self.popupCoverView.popupView.nameTextField.text;
+        
+        if (![name isEqualToString:@""]) {
+            FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
+            noteEntity.name = name;
+            [[FARepository sharedRepository] addNoteEntity:noteEntity];
+            [self.view.tableView reloadData];
+        }
+        
+        [self.popupCoverView removeFromSuperview];
+        [self.popupCoverView.popupView removeFromSuperview];
+    }];
 }
 @end
