@@ -12,6 +12,7 @@
 @interface FAPopupCoverView : FABlackCoverView
 
 @property FAPopUpView *popupView;
+
 - (void)reset;
 
 @end

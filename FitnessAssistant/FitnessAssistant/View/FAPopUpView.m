@@ -29,13 +29,16 @@
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5.0f;
         
-        _closeButton = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"popup-close.png"] highlightedImage:[UIImage imageNamed:@"popup-close-highlighted.png"]];
+        _closeButton = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"popup-close.png"]
+                                         highlightedImage:[UIImage imageNamed:@"popup-close-highlighted.png"]];
         [_closeButton sizeToFit];
         [self addSubview:_closeButton];
         
-        _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
+        _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(gestureHandler:)];
         _longPressGestureRecognizer.minimumPressDuration = 0.01f;
-        _longPressGestureRecognizer.cancelsTouchesInView = NO;  //This will deliever the touchEvent to the button & textfield on it.
+        //Default value - (Yes) will block the touchEvent to the button & textfield on it.
+        _longPressGestureRecognizer.cancelsTouchesInView = NO;
         [self addGestureRecognizer:_longPressGestureRecognizer];
         
         _nameLabel = [[UILabel alloc] init];
@@ -71,7 +74,7 @@
 
 - (void)doneButtonHandler:(UIButton *)sender
 {    
-    if ([self.nameTextField.text isEqual:@""]) {
+    if ([self.nameTextField.text isEqual:EmptyString]) {
         [self shakeSelf];
     }else{
         [self dismiss];
@@ -95,7 +98,7 @@
 
 - (void)dismiss
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"FANewPopUpDone" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DismissNewNoteView object:self];
 }
 
 - (void)shakeSelf

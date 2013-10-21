@@ -41,7 +41,6 @@
 
 - (void)reset
 {
-    NSLog(@"reset");
     [UIView animateWithDuration:0.5f animations:^{
         self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
         noteDetailView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];

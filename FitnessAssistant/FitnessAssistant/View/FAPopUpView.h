@@ -7,6 +7,9 @@
 //
 
 #import "FAView.h"
+#define DismissNewNoteView @"DissmissNewNoteView"
+#define EmptyString @""
+
 
 @interface FAPopUpView : FAView
 
