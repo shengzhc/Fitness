@@ -8,6 +8,7 @@
 
 #import "FAAppDelegate.h"
 #import "FANoteBookViewController.h"
+#import "FAiCloudManager.h"
 
 @interface FAAppDelegate ()
 
@@ -34,7 +35,7 @@
     [self.window makeKeyAndVisible];
     
     self.repository = [FARepository sharedRepository];
-    
+
     return YES;
 }
 

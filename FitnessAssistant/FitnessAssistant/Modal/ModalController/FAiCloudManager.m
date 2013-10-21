@@ -23,6 +23,13 @@
 {
     if ([[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil]) {
         
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"iCloud Backup"
+                                                            message:@"iCloud Backup Enabled\nDisable through System Settings."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
         return YES;
     }
     
@@ -124,6 +131,6 @@
 
 - (NSString *)filename
 {
-    return @"note_icloud1.dat";
+    return @"note_icloud2.dat";
 }
 @end
