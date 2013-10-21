@@ -29,7 +29,7 @@
 
 - (void)initSelf
 {
-    self.popupView = [[FAPopUpView alloc] init];
+    _popupView = [[FAPopUpView alloc] init];
     [self addSubview:_popupView];
 }
 
@@ -50,7 +50,7 @@
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.popupView]];
     [self.animator addBehavior:collision];
     
-    float boundary = self.frame.size.height/2;// + self.popupView.frame.size.height/2;
+    float boundary = self.frame.size.height/2;
     CGPoint startPoint = CGPointMake(0.0, boundary);
     CGPoint endPoint = CGPointMake(self.frame.size.width, boundary);
     [collision addBoundaryWithIdentifier:@"boundary" fromPoint:startPoint toPoint:endPoint];
@@ -59,24 +59,13 @@
 - (void)tapGestureHandler:(UITapGestureRecognizer *)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        [self dismissCover];
-    }
+        [[NSNotificationCenter defaultCenter] postNotificationName:DismissNewNoteView object:self];
+}
 }
 
 - (void)reset
 {
     [self initSelf];
-}
-
-- (void)dismissCover
-{
-    [UIView animateWithDuration:0.5f animations:^{
-        self.popupView.center = CGPointMake(self.popupView.center.x, self.frame.origin.y - self.popupView.frame.size.height/2);
-        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-        [self.popupView removeFromSuperview];
-    }];
 }
 
 @end
