@@ -7,7 +7,10 @@
 //
 
 #import "FABlackCoverView.h"
+#import "FANoteDetailView.h"
 
 @interface FANoteBookDetailCoverView : FABlackCoverView
+
+- (id)initWithFrame:(CGRect)frame withType:(DetailViewType)type;
 
 @end

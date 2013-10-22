@@ -8,10 +8,13 @@
 
 #import "FAViewController.h"
 #import "FANoteView.h"
+#import "FANoteBookDetailCoverView.h"
+
 
 @interface FANoteViewController : FAViewController
 
 - (id)initWithNoteEntity:(id)noteEntity delegate:(id)delegate;
 - (void)clockButtonClicked:(UIButton *)button;
+- (void)presentDetailViewWithType:(DetailViewType)type;
 
 @end

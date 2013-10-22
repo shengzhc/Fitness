@@ -49,11 +49,13 @@
     UIButton *cancelButton;
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithType:(DetailViewType)type
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         // Initialization code
+        NSLog(@"Type: %lu", type);
+        
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5.0;
         

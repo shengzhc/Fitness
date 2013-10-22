@@ -8,6 +8,13 @@
 
 #import "FAView.h"
 
+typedef enum DetailViewType:NSUInteger{
+    NewDetailView = 0,
+    EditDetailView
+} DetailViewType;
+
 @interface FANoteDetailView : FAView
+
+- (id)initWithType:(DetailViewType)type;
 
 @end

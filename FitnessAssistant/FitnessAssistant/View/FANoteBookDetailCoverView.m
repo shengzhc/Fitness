@@ -7,18 +7,21 @@
 //
 
 #import "FANoteBookDetailCoverView.h"
-#import "FANoteDetailView.h"
+
 
 @implementation FANoteBookDetailCoverView{
     FANoteDetailView *noteDetailView;
+    DetailViewType detailViewType;
 }
 
 - (id)initWithFrame:(CGRect)frame
+           withType:(DetailViewType)type
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        noteDetailView = [[FANoteDetailView alloc] init];
+        detailViewType = type;
+        noteDetailView = [[FANoteDetailView alloc] initWithType:type];
         [self addSubview:noteDetailView];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset) name:@"cancelDetail" object:Nil];
     }
