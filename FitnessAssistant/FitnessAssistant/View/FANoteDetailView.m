@@ -49,12 +49,11 @@
     UIButton *cancelButton;
 }
 
-- (id)initWithType:(DetailViewType)type
+- (id)initWithFrame:(CGRect)frame delegate:(id)delegate
 {
-    self = [super init];
+    self = [super initWithFrame:frame delegate:delegate];
     if (self) {
         // Initialization code
-        NSLog(@"Type: %lu", type);
         
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5.0;
@@ -79,7 +78,8 @@
         weightTextField = [[UITextField alloc] init];
         [scrollView addSubview:weightTextField];
         
-        weightUnitSegment = [[UISegmentedControl alloc] initWithItems:@[@"Kg", @"lb"]];
+        weightUnitSegment = [[UISegmentedControl alloc] initWithItems:@[@"Lb", @"Kg"]];
+        [weightUnitSegment setSelectedSegmentIndex:0];
         [scrollView addSubview:weightUnitSegment];
         
         repsLabel = [[UILabel alloc] init];

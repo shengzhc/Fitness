@@ -15,6 +15,4 @@ typedef enum DetailViewType:NSUInteger{
 
 @interface FANoteDetailView : FAView
 
-- (id)initWithType:(DetailViewType)type;
-
 @end

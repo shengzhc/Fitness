@@ -93,7 +93,6 @@
 
 - (void)editButtonClickedAtCell:(FACell *)cell
 {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
     [(FANoteBookViewController *)self.delegate popupCoverViewInWithType:EDIT];
 }
 

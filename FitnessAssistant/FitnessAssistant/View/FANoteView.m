@@ -90,7 +90,7 @@
 
 - (void)editButtonClickedAtCell:(FACell *)cell
 {
-    [(FANoteViewController *)self.delegate presentDetailViewWithType:EditDetailView];
+    [(FANoteViewController *)self.delegate presentDetailViewController];
 }
 
 - (void)deleteButtonClickedAtCell:(FACell *)cell

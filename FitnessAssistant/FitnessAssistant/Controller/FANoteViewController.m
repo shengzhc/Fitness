@@ -8,12 +8,13 @@
 
 #import "FANoteViewController.h"
 #import "FANoteBookViewController.h"
+#import "FANoteDetailViewController.h"
 
 @interface FANoteViewController ()
 
 @property (nonatomic, strong) id noteEntity;
 @property (nonatomic, strong) UIButton *addButton;
-@property (nonatomic, strong) FANoteBookDetailCoverView* noteDetailCoverView;
+@property (nonatomic, strong) FANoteDetailViewController *noteDetailViewController;
 
 @end
 
@@ -63,13 +64,14 @@
 
 - (void)addButtonClicked
 {
-    [self presentDetailViewWithType:NewDetailView];
+    [self presentDetailViewController];
 }
 
-- (void)presentDetailViewWithType:(DetailViewType)type
+- (void)presentDetailViewController
 {
-    self.noteDetailCoverView = [[FANoteBookDetailCoverView alloc] initWithFrame:[[UIScreen mainScreen] bounds] withType:type];
-    [[UIApplication sharedApplication].windows[0] addSubview:self.noteDetailCoverView];
-    [self.noteDetailCoverView comeIn];
+    self.noteDetailViewController = [[FANoteDetailViewController alloc] init];
+    [self.navigationController presentViewController:self.noteDetailViewController animated:YES completion:^{
+        NSLog(@"Done");
+    }];
 }
 @end
