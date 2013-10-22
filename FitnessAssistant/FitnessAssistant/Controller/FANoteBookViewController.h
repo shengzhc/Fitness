@@ -8,11 +8,13 @@
 
 #import "FAViewController.h"
 #import "FANoteBookView.h"
+#import "FAPopupCoverView.h"
 
 @interface FANoteBookViewController : FAViewController
 
 - (void)presentNoteViewControllerWithNoteEntity:(id)entity;
 - (void)presentClockViewControllerWithNoteEntity:(id)entity;
 - (void)dismissClockViewController;
+- (void)popupCoverViewInWithType:(popupViewType)type;
 
 @end

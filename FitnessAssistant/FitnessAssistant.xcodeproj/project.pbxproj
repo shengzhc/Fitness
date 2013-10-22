@@ -594,7 +594,7 @@
 				ORGANIZATIONNAME = iBros;
 				TargetAttributes = {
 					E7DE50D317EFD895006A67D6 = {
-						DevelopmentTeam = YETVG3H8VD;
+						DevelopmentTeam = 2RME457G4W;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;

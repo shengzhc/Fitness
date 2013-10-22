@@ -10,7 +10,6 @@
 #import "FAStatisticViewController.h"
 #import "FANoteViewController.h"
 #import "FANoteClockViewController.h"
-#import "FAPopupCoverView.h"
 #import "FAMenuCoverView.h"
 
 @interface FANoteBookViewController ()
@@ -131,16 +130,18 @@
 
 - (void)addBtnClicked:(UIButton *)sender
 {
-    [self popupCoverViewIn];
+    [self popupCoverViewInWithType:NEW];
 }
+
 
 #pragma mark-FAPopUpView
 
-- (void)popupCoverViewIn
+- (void)popupCoverViewInWithType:(popupViewType)type
 {
     if (self.popupCoverView == nil) {
-        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds type:type];
     } else {
+        [self.popupCoverView setPopupviewType:type];
         [self.popupCoverView reset];
     }
     

@@ -22,9 +22,9 @@
 
 @implementation FAPopUpView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithType:(popupViewType)type
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5.0f;
@@ -42,7 +42,12 @@
         [self addGestureRecognizer:_longPressGestureRecognizer];
         
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.text = @"New Note";
+        if (type == NEW) {
+            _nameLabel.text = @"New Note";
+        }else{
+            _nameLabel.text = @"Edit Note";
+        }
+
         [_nameLabel sizeToFit];
         [self addSubview:_nameLabel];
         

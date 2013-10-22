@@ -16,20 +16,24 @@
 
 @end
 
-@implementation FAPopupCoverView
+@implementation FAPopupCoverView{
+    popupViewType popupType;
+}
 
 - (id)initWithFrame:(CGRect)frame
+               type:(popupViewType)type
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initSelf];
+        popupType = type;
+        [self initSelfWithType:popupType];
     }
     return self;
 }
 
-- (void)initSelf
+- (void)initSelfWithType:(popupViewType)type
 {
-    _popupView = [[FAPopUpView alloc] init];
+    _popupView = [[FAPopUpView alloc] initWithType:type];
     [self addSubview:_popupView];
 }
 
@@ -60,12 +64,17 @@
 {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         [[NSNotificationCenter defaultCenter] postNotificationName:DismissNewNoteView object:self];
+    }
 }
+
+- (void)setPopupviewType:(popupViewType)type
+{
+    popupType = type;
 }
 
 - (void)reset
 {
-    [self initSelf];
+    [self initSelfWithType:popupType];
 }
 
 @end

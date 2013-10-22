@@ -9,10 +9,14 @@
 #import "FABlackCoverView.h"
 #import "FAPopUpView.h"
 
+
 @interface FAPopupCoverView : FABlackCoverView
 
 @property FAPopUpView *popupView;
 
+- (id)initWithFrame:(CGRect)frame
+               type:(popupViewType)type;
 - (void)reset;
+- (void)setPopupviewType:(popupViewType)type;
 
 @end

@@ -10,10 +10,17 @@
 #define DismissNewNoteView @"DissmissNewNoteView"
 #define EmptyString @""
 
+typedef enum PopupViewType:NSInteger{
+    NEW = 0,
+    EDIT
+} popupViewType;
 
 @interface FAPopUpView : FAView
 
+
+- (id)initWithType:(popupViewType)type;
 - (void)dismiss;
+
 @property UITextField *nameTextField;
 
 @end
