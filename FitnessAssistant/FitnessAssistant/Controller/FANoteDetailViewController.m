@@ -20,7 +20,9 @@
     self = [super init];
     if (self) {
         // Custom initialization
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissDetailView) name:@"cancelDetail" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissDetailView)
+                                                     name:@"cancelDetail"
+                                                   object:nil];
     }
     return self;
 }
@@ -34,6 +36,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
+    [self.view addSubview:navigationBar];
+    
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissDetailView)];
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDetailView)];
+    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Detail"];
+    navigationItem.leftBarButtonItem = cancel;
+    navigationItem.rightBarButtonItem = done;
+    
+    navigationBar.items = [NSArray arrayWithObjects:navigationItem, nil];
 }
 
 - (void)dismissDetailView

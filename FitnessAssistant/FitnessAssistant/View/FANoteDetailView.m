@@ -44,9 +44,6 @@
     UILabel *autoIncreaseWeightLabel;
     UITextField *autoIncreaseWeightTextField;
     UISlider *autoIncreaseWeightSlider;
-    
-    UIButton *doneButton;
-    UIButton *cancelButton;
 }
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate
@@ -144,30 +141,16 @@
 
         autoIncreaseWeightSlider = [[UISlider alloc] init];
         [scrollView addSubview:autoIncreaseWeightSlider];
-        
-        cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-        [cancelButton addTarget:self action:@selector(cancelButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
-        [cancelButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [cancelButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        [scrollView addSubview:cancelButton];
-        
-        doneButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        [doneButton setTitle:@"Done" forState:UIControlStateNormal];
-        [doneButton addTarget:self action:@selector(doneButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
-        [doneButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-        [doneButton  setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        [scrollView addSubview:doneButton];
     }
     return self;
 }
 
 - (void)layoutSubviews
 {
-    scrollView.frame = CGRectInset(self.bounds, 5, 30);
+    scrollView.frame =   CGRectMake(0, 64, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - 64);
     scrollView.backgroundColor = [UIColor clearColor];
     
-    nameLabel.frame = CGRectMake(15, 5, 100, 25);
+    nameLabel.frame = CGRectMake(15, 30, 100, 25);
     nameTextField.frame = CGRectMake(CGRectGetMaxX(nameLabel.frame)+HORIZONOFFSET, CGRectGetMinY(nameLabel.frame), 150, CGRectGetHeight(nameLabel.frame));
     [self setBorderFor:nameTextField];
     
@@ -203,15 +186,9 @@
     autoIncreaseWeightLabel.frame = CGRectOffset(CDLabel.frame, 0, VERTICALOFFSET*2);
     autoIncreaseWeightTextField.frame = CGRectOffset(CDTextField.frame, 0, VERTICALOFFSET*2);
     [self setBorderFor:autoIncreaseWeightTextField];
-    
     autoIncreaseWeightSlider.frame = CGRectOffset(CDSlider.frame, 0, VERTICALOFFSET*2);
     
-    cancelButton.frame = CGRectMake(40, CGRectGetMaxY(autoIncreaseWeightLabel.frame)+50, 80, 30);
-    cancelButton.layer.cornerRadius = 6.0;
-    doneButton.frame = CGRectOffset(cancelButton.frame, 140, 0);
-    doneButton.layer.cornerRadius = 6.0;
-    
-    scrollView.contentSize = CGSizeMake(CGRectGetWidth(scrollView.frame), CGRectGetMaxY(doneButton.frame) + VERTICALOFFSET);
+    scrollView.contentSize = CGSizeMake(CGRectGetWidth(scrollView.frame), CGRectGetMaxY(autoIncreaseWeightSlider.frame) + VERTICALOFFSET);
 }
 
 - (void)setBorderFor:(UITextField *)textField
@@ -224,16 +201,6 @@
 - (CGRect)getRectWithVerticalOffset:(CGRect)frame
 {
     return CGRectOffset(frame, 0, VERTICALOFFSET);
-}
-
-- (void)cancelButtonHandler:(UIButton *)sender
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelDetail" object:self];
-}
-
-- (void)doneButtonHandler:(UIButton *)sender
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelDetail" object:self];
 }
 
 @end
