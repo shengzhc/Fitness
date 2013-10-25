@@ -10,8 +10,7 @@
 
 @protocol FANoteCellDelegate <NSObject>
 
-- (void)editButtonClickedAtCell:(FACell *)cell;
-- (void)deleteButtonClickedAtCell:(FACell *)cell;
+- (void)shouldDeleteAtCell:(FACell *)cell;
 
 @optional
 

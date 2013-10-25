@@ -88,12 +88,7 @@
     [(FANoteViewController *)self.delegate clockButtonClicked:button];
 }
 
-- (void)editButtonClickedAtCell:(FACell *)cell
-{
-    [(FANoteViewController *)self.delegate presentDetailViewController];
-}
-
-- (void)deleteButtonClickedAtCell:(FACell *)cell
+- (void)shouldDeleteAtCell:(FACell *)cell
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     [self.datasource removeObjectAtIndex:indexPath.row];
