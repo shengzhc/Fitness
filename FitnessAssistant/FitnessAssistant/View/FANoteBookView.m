@@ -68,7 +68,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [(FANoteBookViewController *)self.delegate presentNoteViewControllerWithNoteEntity:nil];
+    FANoteEntity *noteEntity = [[FARepository sharedRepository] noteEntityForIndex:indexPath.row];
+    [(FANoteBookViewController *)self.delegate presentNoteViewControllerWithNoteEntity:noteEntity];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////

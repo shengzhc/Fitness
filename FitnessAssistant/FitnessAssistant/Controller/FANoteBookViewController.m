@@ -170,7 +170,8 @@
                 noteEntity.name = name;
                 [[FARepository sharedRepository] addNoteEntity:noteEntity];
             }else{
-                self.entityForEdit.name = name;
+                noteEntity = self.entityForEdit;
+                noteEntity.name = name;
             }
 
             [self.view.tableView reloadData];
