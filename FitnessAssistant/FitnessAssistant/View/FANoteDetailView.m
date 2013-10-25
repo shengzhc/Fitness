@@ -12,6 +12,12 @@
 #define VERTICALOFFSET 40
 #define HORIZONOFFSET 10
 
+@interface FANoteDetailView ()
+
+@property (nonatomic, strong) FANoteItemEntity *noteItemEntity;
+
+@end
+
 @implementation FANoteDetailView{
     UIScrollView *scrollView;
     
@@ -203,4 +209,8 @@
     return CGRectOffset(frame, 0, VERTICALOFFSET);
 }
 
+- (void)updateWithNoteItemEntity:(FANoteItemEntity *)noteItemEntity
+{
+    self.noteItemEntity = noteItemEntity;
+}
 @end

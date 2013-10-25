@@ -94,7 +94,7 @@
 
 - (void)editButtonClickedAtCell:(FACell *)cell
 {
-    int indexOfCell = [self.tableView indexPathForCell:cell].row;
+    int indexOfCell = (int)[self.tableView indexPathForCell:cell].row;
     FANoteEntity *noteEntity = [[FARepository sharedRepository] noteEntityForIndex:indexOfCell];
     [(FANoteBookViewController *)self.delegate popupCoverViewInWithType:EDIT withNoteEntity:noteEntity];
 }

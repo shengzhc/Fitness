@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) id noteEntity;
 @property (nonatomic, strong) UIButton *addButton;
-@property (nonatomic, strong) FANoteDetailViewController *noteDetailViewController;
 
 @end
 
@@ -66,13 +65,16 @@
 
 - (void)addButtonClicked
 {
-    [self presentDetailViewController];
+    [self presentDetailViewControllerWithNoteItemEntity:nil];
 }
 
-- (void)presentDetailViewController
+- (void)presentDetailViewControllerWithNoteItemEntity:(FANoteItemEntity *)noteItemEntity
 {
-    self.noteDetailViewController = [[FANoteDetailViewController alloc] init];
-    [self.navigationController presentViewController:self.noteDetailViewController animated:YES completion:^{
+    FANoteDetailViewController *detailViewController = [[FANoteDetailViewController alloc] initWithDelegate:self noteItemEntity:noteItemEntity];
+    [self.navigationController presentViewController:detailViewController
+                                            animated:YES
+                                          completion:^
+    {
         NSLog(@"Done");
     }];
 }

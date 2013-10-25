@@ -11,19 +11,27 @@
 
 @interface FANoteDetailViewController ()
 
+@property (nonatomic, strong) FANoteItemEntity *noteItemEntity;
+@property (nonatomic, strong) FANoteDetailView *view;
+
 @end
 
 @implementation FANoteDetailViewController
 
-- (id)init
+- (id)initWithDelegate:(id)delegate noteItemEntity:(FANoteItemEntity *)noteItemEntity
 {
-    self = [super init];
+    self = [super initWithDelegate:delegate];
+    
     if (self) {
-        // Custom initialization
+
+        _noteItemEntity = noteItemEntity;
+        [self.view updateWithNoteItemEntity:_noteItemEntity];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissDetailView)
                                                      name:@"cancelDetail"
                                                    object:nil];
+        
     }
+    
     return self;
 }
 

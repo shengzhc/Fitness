@@ -10,4 +10,6 @@
 
 @interface FANoteDetailViewController : FAViewController
 
+- (id)initWithDelegate:(id)delegate noteItemEntity:(FANoteItemEntity *)noteItemEntity;
+
 @end

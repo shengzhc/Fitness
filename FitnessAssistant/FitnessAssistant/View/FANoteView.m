@@ -78,6 +78,14 @@
     return 60.0;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(presentDetailViewControllerWithNoteItemEntity:)]) {
+        
+        [self.delegate performSelector:@selector(presentDetailViewControllerWithNoteItemEntity:)
+                            withObject:nil];
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Cell Delegate
