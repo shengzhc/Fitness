@@ -18,14 +18,17 @@
 
 @implementation FAPopupCoverView{
     popupViewType popupType;
+    FANoteEntity *entity;
 }
 
 - (id)initWithFrame:(CGRect)frame
                type:(popupViewType)type
+         noteEntity:(FANoteEntity *)noteEntity
 {
     self = [super initWithFrame:frame];
     if (self) {
         popupType = type;
+        entity = noteEntity;
         [self initSelfWithType:popupType];
     }
     return self;
@@ -33,7 +36,7 @@
 
 - (void)initSelfWithType:(popupViewType)type
 {
-    _popupView = [[FAPopUpView alloc] initWithType:type];
+    _popupView = [[FAPopUpView alloc] initWithType:type noteEntity:entity];
     [self addSubview:_popupView];
 }
 
@@ -67,9 +70,10 @@
     }
 }
 
-- (void)setPopupviewType:(popupViewType)type
+- (void)setPopupviewType:(popupViewType)type withEntity:(FANoteEntity *)noteEntity
 {
     popupType = type;
+    entity = noteEntity;
 }
 
 - (void)reset

@@ -20,6 +20,8 @@
 @property (nonatomic, strong) FAStatisticViewController *statisticViewController;
 @property FAPopupCoverView *popupCoverView;
 @property FAMenuCoverView *menuCoverView;
+@property popupViewType popupType;
+@property FANoteEntity *entityForEdit;
 
 @end
 
@@ -130,18 +132,21 @@
 
 - (void)addBtnClicked:(UIButton *)sender
 {
-    [self popupCoverViewInWithType:NEW];
+    [self popupCoverViewInWithType:NEW withNoteEntity:nil];
 }
 
 
 #pragma mark-FAPopUpView
 
-- (void)popupCoverViewInWithType:(popupViewType)type
+- (void)popupCoverViewInWithType:(popupViewType)type withNoteEntity:(FANoteEntity *)noteEntity
 {
+    self.popupType = type;
+    self.entityForEdit = noteEntity;
+    
     if (self.popupCoverView == nil) {
-        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds type:type];
+        self.popupCoverView = [[FAPopupCoverView alloc] initWithFrame:[UIScreen mainScreen].bounds type:type noteEntity:noteEntity];
     } else {
-        [self.popupCoverView setPopupviewType:type];
+        [self.popupCoverView setPopupviewType:type withEntity:noteEntity];
         [self.popupCoverView reset];
     }
     
@@ -155,15 +160,23 @@
         self.popupCoverView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
     } completion:^(BOOL finished) {
         NSString *name = self.popupCoverView.popupView.nameTextField.text;
-        if (![name isEqualToString:@""]) {
-            FANoteEntity *noteEntity = [FANoteEntity defaultEntity];
-            noteEntity.name = name;
-            [[FARepository sharedRepository] addNoteEntity:noteEntity];
-            [self.view.tableView reloadData];
-        }
-        
         [self.popupCoverView removeFromSuperview];
         [self.popupCoverView.popupView removeFromSuperview];
+
+        if (![name isEqualToString:@""]) {
+            FANoteEntity *noteEntity;
+            if (self.popupType == NEW) {
+                noteEntity = [FANoteEntity defaultEntity];
+                noteEntity.name = name;
+                [[FARepository sharedRepository] addNoteEntity:noteEntity];
+            }else{
+                self.entityForEdit.name = name;
+            }
+
+            [self.view.tableView reloadData];
+            [self presentNoteViewControllerWithNoteEntity:noteEntity];
+        }
+        
     }];
 }
 @end

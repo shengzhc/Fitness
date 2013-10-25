@@ -15,8 +15,9 @@
 @property FAPopUpView *popupView;
 
 - (id)initWithFrame:(CGRect)frame
-               type:(popupViewType)type;
+               type:(popupViewType)type
+         noteEntity:(FANoteEntity *)noteEntity;
 - (void)reset;
-- (void)setPopupviewType:(popupViewType)type;
+- (void)setPopupviewType:(popupViewType)type withEntity:(FANoteEntity *)noteEntity;
 
 @end

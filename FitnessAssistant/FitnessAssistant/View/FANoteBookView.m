@@ -93,7 +93,9 @@
 
 - (void)editButtonClickedAtCell:(FACell *)cell
 {
-    [(FANoteBookViewController *)self.delegate popupCoverViewInWithType:EDIT];
+    int indexOfCell = [self.tableView indexPathForCell:cell].row;
+    FANoteEntity *noteEntity = [[FARepository sharedRepository] noteEntityForIndex:indexOfCell];
+    [(FANoteBookViewController *)self.delegate popupCoverViewInWithType:EDIT withNoteEntity:noteEntity];
 }
 
 - (void)deleteButtonClickedAtCell:(FACell *)cell
