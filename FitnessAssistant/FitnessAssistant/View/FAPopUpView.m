@@ -22,7 +22,7 @@
 
 @implementation FAPopUpView
 
-- (id)initWithType:(popupViewType)type
+- (id)initWithType:(popupViewType)type noteEntity:(FANoteEntity *)noteEntity
 {
     self = [super init];
     if (self) {
@@ -54,6 +54,10 @@
         _nameTextField = [[UITextField alloc] init];
         _nameTextField.layer.borderWidth = 1.0;
         _nameTextField.layer.borderColor = [UIColor blueColor].CGColor;
+        if (type == EDIT) {
+            _nameTextField.text = noteEntity.name;
+        }
+        
         [self addSubview:_nameTextField];
         
         _doneButton = [UIButton buttonWithType:UIButtonTypeSystem];

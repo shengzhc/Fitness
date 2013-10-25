@@ -17,8 +17,7 @@ typedef enum PopupViewType:NSInteger{
 
 @interface FAPopUpView : FAView
 
-
-- (id)initWithType:(popupViewType)type;
+- (id)initWithType:(popupViewType)type noteEntity:(FANoteEntity *)noteEntity;
 - (void)dismiss;
 
 @property UITextField *nameTextField;

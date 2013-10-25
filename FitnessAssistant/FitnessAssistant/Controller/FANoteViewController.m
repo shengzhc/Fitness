@@ -44,7 +44,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Note";
+    
+    FANoteEntity *noteEntity = (FANoteEntity *)self.noteEntity;
+    self.title = noteEntity.name;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addButton];
 }
 
