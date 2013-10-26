@@ -28,7 +28,7 @@
     
     if (self) {
         
-        self.contentView.backgroundColor = [UIColor lightGrayColor];
+        self.contentView.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0];
         _deleteBarImageView = [[UIImageView alloc] init];
         _deleteBarImageView.backgroundColor = [UIColor colorWithRed:220.0/255.0 green:90.0/255.0 blue:50/255.0 alpha:1.0];
         _deleteLabel = [UILabel labelWithFrame:CGRectZero text:@"Deleting..." alignment:NSTextAlignmentCenter font:[UIFont boldFontWithSize:20] textColor:[UIColor whiteColor]];
@@ -42,7 +42,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-
+    CGRect frame = CGRectInset(self.contentView.frame, 0, 2);
+    self.contentView.frame = frame;
     self.deleteBarImageView.frame = [self.deleteBarImageView alignedRectInSuperviewForSize:CGSizeMake(BOUNDARY_WIDTH, self.contentView.bounds.size.height) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsRight | FAAlignmentOptionsVerticalCenter)];
     [self.deleteLabel sizeToFit];
     self.deleteLabel.frame = [self.deleteLabel alignedRectInSuperviewForSize:self.deleteLabel.bounds.size offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsVerticalCenter)];
@@ -92,7 +93,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 - (void)setContentViewCenter:(CGPoint)center animated:(BOOL)animated
 {
-    if (center.x > _originContentCenter.x) {
+    if (center.x > _originContentCenter.x || center.x < _originContentCenter.x - BOUNDARY_WIDTH) {
         return;
     }
 
