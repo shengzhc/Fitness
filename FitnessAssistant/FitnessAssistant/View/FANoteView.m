@@ -12,9 +12,8 @@
 @interface FANoteView ()
 
 @property (nonatomic, strong) UIButton *clockButton;
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *datasource;
 @property (nonatomic, strong) FANoteCell *interactiveCell;
+@property (nonatomic, strong) FANoteEntity *noteEntity;
 
 @end
 
@@ -26,8 +25,6 @@
     self = [super initWithFrame:frame
                        delegate:delegate];
     if (self) {
-        
-        _datasource = [NSMutableArray arrayWithArray:@[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"]];
         
         self.backgroundColor = [UIColor whiteColor];
         _clockButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -41,6 +38,7 @@
         _tableView = [[UITableView alloc] init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         [self addSubview:_tableView];
         [self addSubview:_clockButton];
@@ -54,6 +52,17 @@
     self.clockButton.frame = [self.clockButton alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width - 10, 40) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsBottom)];
     self.tableView.frame = [self.tableView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - self.clockButton.bounds.size.height) offset:CGSizeMake(0, 0) options:(FAAlignmentOptionsHorizontalCenter | FAAlignmentOptionsTop)];
 }
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+#pragma mark Convenient
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+- (void)updateWithNoteEntity:(FANoteEntity *)noteEntity
+{
+    self.noteEntity = noteEntity;
+    [self.tableView reloadData];
+}
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 #pragma mark UITableViewDataSource & UITableViewDelegate
@@ -61,15 +70,16 @@
 ////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.datasource.count;
+    return self.noteEntity.noteItemEntityArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FACell *cell = [FACellFactory cellForTableView:tableView cellType:CellTypeNote];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = [self.datasource objectAtIndex:indexPath.row];
-    [cell setData:nil delegate:self];
+    FANoteItemEntity *data = [self.noteEntity.noteItemEntityArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = data.name;
+    [cell setData:data delegate:self];
     return cell;
 }
 
@@ -99,7 +109,7 @@
 - (void)shouldDeleteAtCell:(FACell *)cell
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    [self.datasource removeObjectAtIndex:indexPath.row];
+    [self.delegate deleteNoteItemEntityAtIndex:indexPath];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 

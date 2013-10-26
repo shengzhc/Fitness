@@ -47,8 +47,8 @@
     UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
     [self.view addSubview:navigationBar];
     
-    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissDetailView)];
-    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDetailView)];
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonClicked:)];
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonClicked:)];
     UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Detail"];
     navigationItem.leftBarButtonItem = cancel;
     navigationItem.rightBarButtonItem = done;
@@ -56,12 +56,22 @@
     navigationBar.items = [NSArray arrayWithObjects:navigationItem, nil];
 }
 
-- (void)dismissDetailView
+- (void)doneButtonClicked:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Dismiss Detail View.");
-    }];
+    [self.view updateNoteItemEntity];
+    
+    if ([self.delegate respondsToSelector:@selector(doneButtonClicked:)]) {
+        [self.delegate performSelector:@selector(doneButtonClicked:) withObject:self.noteItemEntity];
+    }
 }
+
+- (void)cancelButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(cancelButtonClicked:)]) {
+        [self.delegate performSelector:@selector(cancelButtonClicked:) withObject:nil];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {

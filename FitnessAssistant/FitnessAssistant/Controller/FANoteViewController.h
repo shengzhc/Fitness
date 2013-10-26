@@ -12,7 +12,8 @@
 
 @interface FANoteViewController : FAViewController
 
-- (id)initWithNoteEntity:(id)noteEntity delegate:(id)delegate;
+- (id)initWithNoteEntity:(FANoteEntity *)noteEntity delegate:(id)delegate;
 - (void)clockButtonClicked:(UIButton *)button;
+- (void)deleteNoteItemEntityAtIndex:(NSIndexPath *)indexPath;
 
 @end

@@ -59,5 +59,13 @@
     [aCoder encodeObject:self.countForNoteItem forKey:FANoteItemEntityKeyCountForNoteItem];
 }
 
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[FANoteItemEntity class]]) {
+        return [self.name isEqualToString:[object valueForKey:@"name"]];
+    }
+    
+    return NO;
+}
 
 @end

@@ -18,7 +18,7 @@
 
 @end
 
-@implementation FANoteDetailView{
+@implementation FANoteDetailView {
     UIScrollView *scrollView;
     
     UILabel *nameLabel;
@@ -212,5 +212,33 @@
 - (void)updateWithNoteItemEntity:(FANoteItemEntity *)noteItemEntity
 {
     self.noteItemEntity = noteItemEntity;
+    nameTextField.text = self.noteItemEntity.name;
+    weightTextField.text = [NSString stringWithFormat:@"%@", self.noteItemEntity.weight];
+    weightUnitSegment.selected = self.noteItemEntity.unit == WeightUnitTypeKG ? NO : YES;
+    repsTextField.text = [self.noteItemEntity.reps stringValue];
+    repsSlider.value = [self.noteItemEntity.reps floatValue];
+    setsTextField.text = [self.noteItemEntity.sets stringValue];
+    setsSlider.value = [self.noteItemEntity.sets floatValue];
+    timeOfSetsTextField.text = [self.noteItemEntity.timeOfSet stringValue];
+    timeOfSetsSlider.value = [self.noteItemEntity.timeOfSet floatValue];
+    CDTextField.text = [NSString stringWithFormat:@"%f", self.noteItemEntity.timeBetweenSets];
+    CDSlider.value = self.noteItemEntity.timeBetweenSets;
+    autoIncreaseSwitch.selected = self.noteItemEntity.isWeightAutoIncrement;
+    autoIncreaseWeightTextField.text = [self.noteItemEntity.weightAutoIncrement stringValue];
+    autoIncreaseWeightSlider.value = [self.noteItemEntity.weightAutoIncrement floatValue];
+    
+}
+
+- (void)updateNoteItemEntity
+{
+    self.noteItemEntity.name = nameTextField.text;
+    self.noteItemEntity.weight = [NSNumber numberWithFloat:[weightTextField.text floatValue]];
+    self.noteItemEntity.unit = weightUnitSegment.selectedSegmentIndex == 0 ? WeightUnitTypePound : WeightUnitTypeKG;
+    self.noteItemEntity.reps = [NSNumber numberWithFloat:repsSlider.value];
+    self.noteItemEntity.sets = [NSNumber numberWithFloat:setsSlider.value];
+    self.noteItemEntity.timeOfSet = [NSNumber numberWithFloat:timeOfSetsSlider.value];
+    self.noteItemEntity.timeBetweenSets = CDSlider.value;
+    self.noteItemEntity.isWeightAutoIncrement = autoIncreaseSwitch.selected;
+    self.noteItemEntity.weightAutoIncrement = [NSNumber numberWithFloat:autoIncreaseWeightSlider.value];
 }
 @end

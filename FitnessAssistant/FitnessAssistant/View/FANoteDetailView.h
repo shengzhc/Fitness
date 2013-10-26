@@ -16,5 +16,6 @@ typedef enum DetailViewType:NSUInteger{
 @interface FANoteDetailView : FAView
 
 - (void)updateWithNoteItemEntity:(FANoteItemEntity *)noteItemEntity;
+- (void)updateNoteItemEntity;
 
 @end

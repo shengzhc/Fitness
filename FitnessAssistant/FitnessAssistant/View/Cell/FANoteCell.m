@@ -27,8 +27,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-
-        self.contentView.backgroundColor = [UIColor whiteColor];
+        
+        self.contentView.backgroundColor = [UIColor lightGrayColor];
         _deleteBarImageView = [[UIImageView alloc] init];
         _deleteBarImageView.backgroundColor = [UIColor colorWithRed:220.0/255.0 green:90.0/255.0 blue:50/255.0 alpha:1.0];
         _deleteLabel = [UILabel labelWithFrame:CGRectZero text:@"Deleting..." alignment:NSTextAlignmentCenter font:[UIFont boldFontWithSize:20] textColor:[UIColor whiteColor]];

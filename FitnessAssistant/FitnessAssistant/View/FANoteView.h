@@ -10,4 +10,8 @@
 
 @interface FANoteView : FAView < UITableViewDataSource, UITableViewDelegate, FANoteCellDelegate >
 
+@property (nonatomic, strong) UITableView *tableView;
+
+- (void)updateWithNoteEntity:(FANoteEntity *)noteEntity;
+
 @end
